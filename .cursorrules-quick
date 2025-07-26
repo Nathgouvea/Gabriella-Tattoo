@@ -1,0 +1,315 @@
+# Quick Reference - Essential Rules
+
+## 🚨 Critical Rules (Never Break)
+
+### Import Statements
+
+```typescript
+// ❌ NEVER use version numbers in imports
+import { Slot } from "@radix-ui/react-slot@1.1.2";
+
+// ✅ ALWAYS use clean imports
+import { Slot } from "@radix-ui/react-slot";
+```
+
+### Component Structure
+
+```typescript
+// ✅ ALWAYS use this pattern
+interface ComponentProps {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+}
+
+export function ComponentName({ language, setLanguage }: ComponentProps) {
+  return <div>...</div>;
+}
+```
+
+### Styling
+
+```typescript
+// ❌ NEVER use inline styles
+<div style={{ backgroundColor: 'red' }}>
+
+// ✅ ALWAYS use Tailwind classes
+<div className="bg-red-500">
+```
+
+## 📁 File Organization
+
+### Required Structure
+
+```
+src/
+├── components/
+│   ├── ui/           # Reusable UI components
+│   ├── Home.tsx      # Page components
+│   └── Gallery.tsx
+├── assets/           # Images and assets
+├── styles/
+│   └── globals.css   # Global styles
+├── App.tsx           # Main app
+└── main.tsx          # Entry point
+```
+
+### Naming Conventions
+
+- Components: `PascalCase.tsx` (Home.tsx, Gallery.tsx)
+- Files: `kebab-case.ts` (translations.ts, globals.css)
+- Assets: `kebab-case.svg` (butterfly-tattoo.svg)
+
+## 🎨 Styling Quick Reference
+
+### Use These Classes
+
+```html
+<!-- Buttons -->
+<button className="gradient-button px-8 py-4 text-white">
+  <button variant="outline" className="border-gray-300">
+    <!-- Cards -->
+    <div className="luxury-card p-8 rounded-2xl">
+      <!-- Typography -->
+      <div className="logo-font text-2xl">
+        <h1 className="hero-title text-4xl">
+          <p className="body-text text-lg">
+            <!-- Colors -->
+            text-soft-black text-medium-gray bg-champagne bg-cream
+          </p>
+        </h1>
+      </div>
+    </div>
+  </button>
+</button>
+```
+
+### Responsive Design
+
+```html
+<!-- Mobile-first approach -->
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <div className="text-sm md:text-base lg:text-lg">
+    <div className="p-4 md:p-6 lg:p-8"></div>
+  </div>
+</div>
+```
+
+## 🔧 TypeScript Patterns
+
+### Common Types
+
+```typescript
+type Language = "en" | "pt" | "es";
+type Page = "home" | "gallery";
+
+interface ComponentProps {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  setCurrentPage: (page: Page) => void;
+}
+```
+
+### State Management
+
+```typescript
+const [currentPage, setCurrentPage] = useState<Page>("home");
+const [language, setLanguage] = useState<Language>("en");
+```
+
+## 🌍 Internationalization
+
+### Translation System
+
+```typescript
+// Add new text to translations.ts
+export const translations = {
+  en: {
+    nav: { home: "Home", gallery: "Gallery" },
+    // Add new translations here
+  },
+  pt: {
+    /* Portuguese translations */
+  },
+  es: {
+    /* Spanish translations */
+  },
+};
+```
+
+## 📦 Dependencies
+
+### Allowed Dependencies
+
+- React 18+
+- Vite
+- Tailwind CSS
+- Radix UI components
+- Lucide React icons
+- TypeScript
+
+### Adding New Dependencies
+
+1. Check if it's necessary
+2. Prefer Radix UI for UI components
+3. Update README.md
+4. Document the reason
+
+## 🚀 Development Commands
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+```
+
+## 🔍 Code Quality Checklist
+
+Before committing:
+
+- [ ] No TypeScript errors
+- [ ] ESLint passes
+- [ ] No version numbers in imports
+- [ ] Uses established color system
+- [ ] Responsive design works
+- [ ] Language switching works
+- [ ] No inline styles
+- [ ] Proper component structure
+
+## 🎯 Common Patterns
+
+### Navigation
+
+```typescript
+<nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+  <div className="max-w-6xl mx-auto px-6 py-4">
+    <div className="flex items-center justify-between">
+      {/* Navigation content */}
+    </div>
+  </div>
+</nav>
+```
+
+### Portfolio Grid
+
+```typescript
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {items.map((item) => (
+    <div
+      key={item.id}
+      className="gallery-item relative overflow-hidden rounded-xl"
+    >
+      {/* Portfolio item content */}
+    </div>
+  ))}
+</div>
+```
+
+### Language Switcher
+
+```typescript
+<div className="flex items-center space-x-1">
+  <Button
+    variant={language === "en" ? "default" : "ghost"}
+    size="sm"
+    onClick={() => setLanguage("en")}
+  >
+    EN
+  </Button>
+  {/* Repeat for other languages */}
+</div>
+```
+
+## 🚫 Forbidden Practices
+
+- ❌ Version numbers in imports
+- ❌ Inline styles
+- ❌ Breaking responsive design
+- ❌ Removing accessibility features
+- ❌ Adding unnecessary dependencies
+- ❌ Breaking language switching
+- ❌ Using `any` type
+- ❌ Deep component nesting
+
+## 📞 Quick Fixes
+
+### Import Error
+
+```bash
+# If you see import errors, check:
+npm install @radix-ui/react-slot class-variance-authority
+```
+
+### Styling Error
+
+```bash
+# If Tailwind classes don't work:
+npm run dev  # Restart dev server
+```
+
+### TypeScript Error
+
+```bash
+# If TypeScript complains:
+npm run lint  # Check for issues
+```
+
+## 🎨 Color Palette
+
+```css
+/* Primary Colors */
+--soft-black: #2D2D2D
+--medium-gray: #6B7280
+--champagne: #f7f3e9
+--cream: #faf8f5
+--pearl-white: #f9f7f4
+--elegant-gold: #d4af37
+```
+
+## 📱 Breakpoints
+
+```css
+sm: 640px   /* Small devices */
+md: 768px   /* Medium devices */
+lg: 1024px  /* Large devices */
+xl: 1280px  /* Extra large devices */
+```
+
+## 🔄 State Management
+
+```typescript
+// Use React hooks for local state
+const [currentPage, setCurrentPage] = useState<Page>("home");
+const [language, setLanguage] = useState<Language>("en");
+
+// Pass state and setters as props
+<Home
+  language={language}
+  setLanguage={setLanguage}
+  setCurrentPage={setCurrentPage}
+/>;
+```
+
+## 🎯 Performance Tips
+
+- Use `useMemo` for expensive calculations
+- Use `useCallback` for event handlers
+- Lazy load components when appropriate
+- Optimize images before adding to assets
+- Use proper React keys for lists
+
+## 🛡️ Security
+
+- Validate all user inputs
+- Use HTTPS for external links
+- Sanitize any user-generated content
+- Don't expose sensitive data in client-side code
+
+## 📚 Documentation
+
+- Update README.md for new features
+- Add comments for complex logic
+- Document component APIs
+- Keep cursor rules up to date
+
+Remember: When in doubt, check the main `.cursorrules` files for detailed guidance!

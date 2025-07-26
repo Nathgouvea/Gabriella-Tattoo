@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --primary: 0 0% 10%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 10%;
+  --muted: 0 0% 97%;
+  --muted-foreground: 0 0% 42%;
+  --accent: 0 0% 94%;
+  --accent-foreground: 0 0% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 90%;
+  --input: 0 0% 100%;
+  --input-background: 0 0% 97%;
+  --switch-background: 0 0% 90%;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: 0 0% 10%;
+  --chart-1: 0 0% 10%;
+  --chart-2: 0 0% 42%;
+  --chart-3: 0 0% 64%;
+  --chart-4: 0 0% 84%;
+  --chart-5: 0 0% 96%;
+  --radius: 0.625rem;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 0 0% 10%;
+  --sidebar-primary: 0 0% 10%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 97%;
+  --sidebar-accent-foreground: 0 0% 10%;
+  --sidebar-border: 0 0% 90%;
+  --sidebar-ring: 0 0% 10%;
+
+  /* Minimalist color palette with luxury gradients */
+  --champagne: #f7f3e9;
+  --cream: #faf8f5;
+  --warm-gray: #f5f4f2;
+  --dark-gray: #2a2a2a;
+  --medium-gray: #5a5a5a;
+  --light-gray: #f8f8f8;
+  --soft-black: #1a1a1a;
+  --elegant-gold: #d4af37;
+  --rose-gold: #e8b4a0;
+  --pearl-white: #f9f7f4;
+  --soft-gray: #f8f9fa;
+  --footer-gray: #6c757d;
+}
+
+.dark {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 93%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 93%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 93%;
+  --primary: 0 0% 93%;
+  --primary-foreground: 0 0% 4%;
+  --secondary: 0 0% 10%;
+  --secondary-foreground: 0 0% 93%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 0 0% 10%;
+  --accent-foreground: 0 0% 93%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 93%;
+  --border: 0 0% 15%;
+  --input: 0 0% 10%;
+  --ring: 0 0% 84%;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: 0 0% 93%;
+  --chart-2: 0 0% 64%;
+  --chart-3: 0 0% 42%;
+  --chart-4: 0 0% 25%;
+  --chart-5: 0 0% 10%;
+  --sidebar: 0 0% 4%;
+  --sidebar-foreground: 0 0% 93%;
+  --sidebar-primary: 0 0% 93%;
+  --sidebar-primary-foreground: 0 0% 4%;
+  --sidebar-accent: 0 0% 10%;
+  --sidebar-accent-foreground: 0 0% 93%;
+  --sidebar-border: 0 0% 15%;
+  --sidebar-ring: 0 0% 84%;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
+  }
+}
+
+/* Luxury gradient backgrounds */
+.gradient-luxury {
+  background: linear-gradient(
+    135deg,
+    var(--pearl-white) 0%,
+    var(--champagne) 30%,
+    var(--cream) 70%,
+    var(--warm-gray) 100%
+  );
+}
+
+.gradient-elegant {
+  background: linear-gradient(
+    135deg,
+    var(--cream) 0%,
+    var(--champagne) 50%,
+    var(--pearl-white) 100%
+  );
+}
+
+.gradient-soft {
+  background: linear-gradient(
+    135deg,
+    #fafafa 0%,
+    var(--cream) 50%,
+    var(--champagne) 100%
+  );
+}
+
+/* Updated hero gradient - less opacity for more visible background */
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(247, 243, 233, 0.7) 30%,
+    rgba(250, 248, 245, 0.65) 70%,
+    rgba(245, 244, 242, 0.6) 100%
+  );
+}
+
+.gradient-button {
+  background: linear-gradient(
+    135deg,
+    var(--soft-black) 0%,
+    var(--dark-gray) 100%
+  );
+}
+
+.gradient-button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--dark-gray) 0%,
+    var(--soft-black) 100%
+  );
+}
+
+/* Footer gradient - softer gray */
+.gradient-footer {
+  background: linear-gradient(
+    135deg,
+    var(--soft-gray) 0%,
+    var(--footer-gray) 50%,
+    #e9ecef 100%
+  );
+}
+
+/* Custom backgrounds */
+.bg-champagne {
+  background-color: var(--champagne);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-warm-gray {
+  background-color: var(--warm-gray);
+}
+
+.bg-pearl-white {
+  background-color: var(--pearl-white);
+}
+
+.text-dark-gray {
+  color: var(--dark-gray);
+}
+
+.text-medium-gray {
+  color: var(--medium-gray);
+}
+
+.text-soft-black {
+  color: var(--soft-black);
+}
+
+.border-champagne {
+  border-color: var(--champagne);
+}
+
+/* Logo font - elegant cursive */
+.logo-font {
+  font-family: "Sacramento", cursive;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Hero title font - curvy and elegant */
+.hero-title {
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--soft-black);
+}
+
+/* Body text with better contrast */
+.body-text {
+  color: var(--medium-gray);
+  line-height: 1.6;
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Gallery hover effects */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Luxury card styles */
+.luxury-card {
+  background: var(--pearl-white);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}

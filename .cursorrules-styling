@@ -1,0 +1,357 @@
+# Styling & CSS Rules
+
+## Tailwind CSS Guidelines
+
+### Class Order
+
+```html
+<!-- ✅ Correct order: Layout > Spacing > Typography > Visual > Interactive -->
+<div
+  class="flex items-center justify-between p-4 text-lg font-medium bg-white border border-gray-200 hover:bg-gray-50"
+></div>
+```
+
+### Responsive Design
+
+```html
+<!-- ✅ Use responsive prefixes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="text-sm md:text-base lg:text-lg">
+    <div class="hidden md:block"></div>
+  </div>
+</div>
+```
+
+### Custom Classes
+
+- Use the established custom classes from globals.css
+- Don't create new custom classes unless absolutely necessary
+- Follow the existing naming patterns
+
+### Established Custom Classes
+
+```css
+/* ✅ Use these custom classes */
+.gradient-luxury
+  .gradient-elegant
+  .gradient-soft
+  .gradient-hero
+  .gradient-button
+  .gradient-footer
+  .luxury-card
+  .logo-font
+  .hero-title
+  .body-text
+  .animate-fade-in-up
+  .animate-slide-in
+  .animate-shimmer;
+```
+
+## Color System
+
+### Primary Colors
+
+```css
+/* ✅ Use these color variables */
+--soft-black: #2D2D2D
+--medium-gray: #6B7280
+--light-gray: #F3F4F6
+--champagne: #f7f3e9
+--cream: #faf8f5
+--warm-gray: #f5f4f2
+--dark-gray: #2a2a2a
+--pearl-white: #f9f7f4
+--elegant-gold: #d4af37
+--rose-gold: #e8b4a0
+```
+
+### Tailwind Color Classes
+
+```html
+<!-- ✅ Use these Tailwind classes -->
+text-soft-black text-medium-gray bg-champagne bg-cream bg-warm-gray
+bg-pearl-white border-champagne
+```
+
+### HSL Color System
+
+```css
+/* ✅ Use HSL format for theme colors */
+--background: 0 0% 100%;
+--foreground: 0 0% 10%;
+--primary: 0 0% 10%;
+--border: 0 0% 90%;
+```
+
+## Component Styling Patterns
+
+### Button Components
+
+```html
+<!-- ✅ Primary button -->
+<button className="px-8 py-4 gradient-button hover:gradient-button text-white">
+  <!-- ✅ Secondary button -->
+  <button
+    variant="outline"
+    className="px-8 py-4 border-gray-300 hover:bg-white/50"
+  >
+    <!-- ✅ Ghost button -->
+    <button
+      variant="ghost"
+      className="text-medium-gray hover:text-soft-black"
+    ></button>
+  </button>
+</button>
+```
+
+### Card Components
+
+```html
+<!-- ✅ Luxury card -->
+<div className="luxury-card p-8 rounded-2xl">
+  <!-- ✅ Portfolio item -->
+  <div className="gallery-item relative overflow-hidden rounded-xl"></div>
+</div>
+```
+
+### Navigation
+
+```html
+<!-- ✅ Navigation container -->
+<nav
+  className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100"
+>
+  <!-- ✅ Navigation items -->
+  <button
+    className="text-medium-gray hover:text-soft-black transition-colors"
+  ></button>
+</nav>
+```
+
+## Typography
+
+### Font Classes
+
+```html
+<!-- ✅ Logo font -->
+<div className="logo-font text-2xl text-soft-black">
+  <!-- ✅ Hero title -->
+  <h1 className="hero-title text-4xl md:text-6xl">
+    <!-- ✅ Body text -->
+    <p className="body-text text-lg"></p>
+  </h1>
+</div>
+```
+
+### Font Sizes
+
+```html
+<!-- ✅ Use consistent font sizes -->
+text-xs /* 12px - small labels */ text-sm /* 14px - body text */ text-base /*
+16px - default */ text-lg /* 18px - larger text */ text-xl /* 20px - headings */
+text-2xl /* 24px - large headings */ text-4xl /* 36px - hero text */
+```
+
+## Spacing System
+
+### Consistent Spacing
+
+```html
+<!-- ✅ Use consistent spacing values -->
+p-2 /* 8px */ p-4 /* 16px */ p-6 /* 24px */ p-8 /* 32px */ px-4 /* 16px
+horizontal */ py-6 /* 24px vertical */ gap-4 /* 16px gap */ space-y-4 /* 16px
+vertical spacing */
+```
+
+## Animation & Transitions
+
+### Smooth Transitions
+
+```html
+<!-- ✅ Use consistent transition classes -->
+transition-colors transition-all transition-transform duration-300 ease-in-out
+```
+
+### Custom Animations
+
+```html
+<!-- ✅ Use established animations -->
+<div className="animate-fade-in-up">
+  <div className="animate-slide-in">
+    <div className="animate-shimmer"></div>
+  </div>
+</div>
+```
+
+## Layout Patterns
+
+### Grid Layouts
+
+```html
+<!-- ✅ Portfolio grid -->
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- ✅ Feature grid -->
+  <div className="grid md:grid-cols-3 gap-8"></div>
+</div>
+```
+
+### Flexbox Layouts
+
+```html
+<!-- ✅ Navigation -->
+<div className="flex items-center justify-between">
+  <!-- ✅ Centered content -->
+  <div className="flex items-center justify-center">
+    <!-- ✅ Stacked items -->
+    <div className="flex flex-col space-y-4"></div>
+  </div>
+</div>
+```
+
+## Responsive Design Rules
+
+### Breakpoints
+
+```html
+<!-- ✅ Use these breakpoints consistently -->
+sm: 640px /* Small devices */ md: 768px /* Medium devices */ lg: 1024px /* Large
+devices */ xl: 1280px /* Extra large devices */
+```
+
+### Mobile-First Approach
+
+```html
+<!-- ✅ Start with mobile, then add larger breakpoints -->
+<div className="text-sm md:text-base lg:text-lg">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="p-4 md:p-6 lg:p-8"></div>
+  </div>
+</div>
+```
+
+## Accessibility
+
+### Focus States
+
+```html
+<!-- ✅ Include focus states -->
+<button
+  className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+></button>
+```
+
+### Color Contrast
+
+```html
+<!-- ✅ Ensure sufficient contrast -->
+<button className="bg-soft-black text-white">
+  <p className="text-medium-gray"></p>
+</button>
+```
+
+## Dark Mode Support
+
+### Dark Mode Classes
+
+```html
+<!-- ✅ Use dark mode variants -->
+<div className="bg-white dark:bg-gray-900">
+  <p className="text-gray-900 dark:text-gray-100">
+    <button className="border-gray-200 dark:border-gray-700"></button>
+  </p>
+</div>
+```
+
+## Performance
+
+### CSS Optimization
+
+- Use Tailwind's purge feature
+- Minimize custom CSS
+- Use utility classes over custom styles
+- Optimize critical CSS path
+
+### Image Optimization
+
+```html
+<!-- ✅ Use proper image sizing -->
+<img className="w-full h-auto object-cover" />
+<img className="w-16 h-16 rounded-full object-cover" />
+```
+
+## Common Anti-Patterns
+
+### ❌ Don't use inline styles
+
+```html
+<!-- ❌ Avoid -->
+<div style="background-color: #f0f0f0; padding: 20px;">
+  <!-- ✅ Use Tailwind classes -->
+  <div className="bg-gray-100 p-5"></div>
+</div>
+```
+
+### ❌ Don't create unnecessary custom classes
+
+```css
+/* ❌ Avoid */
+.custom-button {
+  background: linear-gradient(...);
+  padding: 1rem;
+}
+
+/* ✅ Use existing classes */
+<Button className="gradient-button px-4 py-4">
+```
+
+### ❌ Don't break the color system
+
+```html
+<!-- ❌ Avoid -->
+<div className="bg-red-500 text-blue-600">
+  <!-- ✅ Use established colors -->
+  <div className="bg-destructive text-primary"></div>
+</div>
+```
+
+## File Organization
+
+### CSS File Structure
+
+```
+src/styles/
+├── globals.css          /* Main stylesheet */
+└── components/          /* Component-specific styles (if needed) */
+```
+
+### Import Order in globals.css
+
+```css
+/* 1. Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Font imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+/* 3. CSS custom properties */
+:root {
+  ...;
+}
+
+/* 4. Base styles */
+@layer base {
+  ...;
+}
+
+/* 5. Component styles */
+@layer components {
+  ...;
+}
+
+/* 6. Utility styles */
+@layer utilities {
+  ...;
+}
+```

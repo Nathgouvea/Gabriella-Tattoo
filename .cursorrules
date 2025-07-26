@@ -1,0 +1,164 @@
+# Gabriella Tattoo - Cursor Rules
+
+## Project Overview
+This is a React TypeScript website for Gabriella Tattoo, showcasing fine-line tattoo artistry with a modern, minimalist design. The project uses Vite, Tailwind CSS, and Radix UI components.
+
+## Tech Stack Requirements
+- React 18+ with TypeScript
+- Vite as build tool
+- Tailwind CSS for styling
+- Radix UI for accessible components
+- Lucide React for icons
+- ESLint for code quality
+
+## File Structure Rules
+- All source code must be in `src/` directory
+- Components in `src/components/`
+- UI components in `src/components/ui/`
+- Assets in `src/assets/`
+- Styles in `src/styles/`
+- Main entry point: `src/main.tsx`
+- App component: `src/App.tsx`
+
+## Code Style & Standards
+
+### TypeScript Rules
+- Use strict TypeScript configuration
+- Always define proper types for props and state
+- Use interfaces for component props
+- Prefer `type` for simple type definitions
+- Use proper import/export syntax
+
+### React Rules
+- Use functional components with hooks
+- Use React.FC or proper typing for components
+- Implement proper prop interfaces
+- Use React.StrictMode in main.tsx
+- Follow React best practices for state management
+
+### Component Structure
+```typescript
+interface ComponentProps {
+  // Define props here
+}
+
+export function ComponentName({ prop1, prop2 }: ComponentProps) {
+  // Component logic
+  return (
+    // JSX
+  );
+}
+```
+
+### Styling Rules
+- Use Tailwind CSS classes exclusively
+- No inline styles unless absolutely necessary
+- Use CSS custom properties for theme colors
+- Follow the established color palette in globals.css
+- Use the defined utility classes (gradient-*, luxury-card, etc.)
+
+### Import Rules
+- Use relative imports for local files
+- Use absolute imports for node_modules
+- Group imports: React, external libraries, internal components, types
+- Never use version numbers in import statements
+
+### Naming Conventions
+- Components: PascalCase (e.g., `Home.tsx`, `Gallery.tsx`)
+- Files: kebab-case for non-components (e.g., `globals.css`)
+- Variables: camelCase
+- Constants: UPPER_SNAKE_CASE
+- CSS classes: kebab-case
+
+## Dependencies Management
+- Only add necessary dependencies
+- Prefer Radix UI for complex UI components
+- Use Lucide React for icons
+- Keep dependencies up to date
+- Document any new dependencies in README
+
+## Asset Management
+- Place all images in `src/assets/`
+- Use SVG for icons when possible
+- Optimize images for web
+- Use descriptive filenames
+- Update placeholder images with actual content
+
+## Internationalization
+- Support English, Portuguese, and Spanish
+- Use the translations system in `src/components/translations.ts`
+- Add new translations for any new text
+- Use the Language type: `'en' | 'pt' | 'es'`
+
+## Performance Guidelines
+- Lazy load components when appropriate
+- Optimize images and assets
+- Use proper React keys for lists
+- Minimize bundle size
+- Use Vite's optimization features
+
+## Accessibility
+- Use semantic HTML elements
+- Implement proper ARIA labels
+- Ensure keyboard navigation works
+- Maintain color contrast ratios
+- Use Radix UI components for accessibility
+
+## Testing Considerations
+- Write tests for critical functionality
+- Test responsive design
+- Test language switching
+- Test accessibility features
+- Use proper testing libraries
+
+## Deployment
+- Build for production using `npm run build`
+- Test production build locally
+- Optimize for performance
+- Ensure all assets are properly included
+
+## Code Quality
+- Run ESLint before committing
+- Fix all TypeScript errors
+- Maintain consistent formatting
+- Write clear, readable code
+- Add comments for complex logic
+
+## Security
+- Sanitize user inputs
+- Use HTTPS for external links
+- Validate all data
+- Follow security best practices
+
+## Documentation
+- Update README.md for new features
+- Document component APIs
+- Keep code comments up to date
+- Document any configuration changes
+
+## Git Workflow
+- Use descriptive commit messages
+- Create feature branches for new work
+- Test changes before merging
+- Keep commits atomic and focused
+
+## Environment Setup
+- Node.js 16+ required
+- Use npm for package management
+- Follow the established project structure
+- Use the provided scripts in package.json
+
+## Common Patterns
+- Use the established color system
+- Follow the component composition patterns
+- Use the defined utility classes
+- Maintain the luxury/minimalist aesthetic
+- Keep the multi-language support working
+
+## Forbidden Practices
+- Don't use version numbers in imports
+- Don't add inline styles
+- Don't break the responsive design
+- Don't remove accessibility features
+- Don't add unnecessary dependencies
+- Don't break the language switching functionality 

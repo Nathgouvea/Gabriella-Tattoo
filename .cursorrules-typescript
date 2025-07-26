@@ -1,0 +1,235 @@
+# TypeScript & React Specific Rules
+
+## TypeScript Configuration
+- Use strict mode enabled
+- No implicit any types
+- Proper type annotations for all variables
+- Use type inference when types are obvious
+- Define interfaces for all component props
+
+## React Component Patterns
+
+### Component Definition
+```typescript
+// ✅ Correct
+interface HomeProps {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  setCurrentPage: (page: 'home' | 'gallery') => void;
+}
+
+export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
+  // Component logic
+}
+
+// ❌ Avoid
+export default function Home(props: any) {
+  // Component logic
+}
+```
+
+### State Management
+```typescript
+// ✅ Correct
+const [currentPage, setCurrentPage] = useState<Page>('home');
+const [language, setLanguage] = useState<Language>('en');
+
+// ❌ Avoid
+const [currentPage, setCurrentPage] = useState('home');
+```
+
+### Event Handlers
+```typescript
+// ✅ Correct
+const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  // Handler logic
+};
+
+// ✅ Correct for simple handlers
+const handleLanguageChange = (lang: Language) => {
+  setLanguage(lang);
+};
+```
+
+## Type Definitions
+
+### Common Types
+```typescript
+type Language = 'en' | 'pt' | 'es';
+type Page = 'home' | 'gallery';
+
+interface TranslationKeys {
+  nav: {
+    home: string;
+    gallery: string;
+  };
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+}
+```
+
+### Component Props Interface
+```typescript
+interface ComponentProps {
+  // Required props
+  requiredProp: string;
+  
+  // Optional props
+  optionalProp?: number;
+  
+  // Function props
+  onAction: (value: string) => void;
+  
+  // Children
+  children?: React.ReactNode;
+}
+```
+
+## Import/Export Patterns
+
+### Import Order
+```typescript
+// 1. React imports
+import React, { useState, useEffect } from 'react';
+
+// 2. External library imports
+import { Button } from './ui/button';
+import { MapPin, Clock, Instagram } from 'lucide-react';
+
+// 3. Internal component imports
+import { Home } from './components/Home';
+import { Gallery } from './components/Gallery';
+
+// 4. Type imports
+import type { Language, Page } from './types';
+
+// 5. Asset imports
+import exampleTattoo1 from 'figma:asset/example.svg';
+```
+
+### Export Patterns
+```typescript
+// ✅ Named exports for components
+export function ComponentName() {}
+
+// ✅ Named exports for utilities
+export { buttonVariants } from './button';
+
+// ✅ Default export for main component
+export default function App() {}
+```
+
+## Error Handling
+
+### Type Guards
+```typescript
+// ✅ Use type guards
+function isLanguage(value: string): value is Language {
+  return ['en', 'pt', 'es'].includes(value);
+}
+
+// ✅ Use in components
+const handleLanguageChange = (value: string) => {
+  if (isLanguage(value)) {
+    setLanguage(value);
+  }
+};
+```
+
+### Optional Chaining
+```typescript
+// ✅ Use optional chaining
+const element = document.getElementById(sectionId);
+element?.scrollIntoView({ behavior: 'smooth' });
+
+// ✅ Use nullish coalescing
+const title = data?.title ?? 'Default Title';
+```
+
+## Performance Patterns
+
+### Memoization
+```typescript
+// ✅ Use useMemo for expensive calculations
+const filteredItems = useMemo(() => {
+  return filter === 'all' 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === filter);
+}, [filter, portfolioItems]);
+
+// ✅ Use useCallback for event handlers
+const handleFilterChange = useCallback((newFilter: string) => {
+  setFilter(newFilter);
+}, []);
+```
+
+### Lazy Loading
+```typescript
+// ✅ Lazy load components
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+// ✅ Use Suspense
+<Suspense fallback={<div>Loading...</div>}>
+  <LazyComponent />
+</Suspense>
+```
+
+## Common Anti-Patterns to Avoid
+
+### ❌ Don't use any type
+```typescript
+// ❌ Avoid
+const data: any = fetchData();
+
+// ✅ Use proper typing
+const data: ApiResponse = fetchData();
+```
+
+### ❌ Don't ignore TypeScript errors
+```typescript
+// ❌ Avoid
+// @ts-ignore
+const result = someFunction();
+
+// ✅ Fix the underlying issue
+const result = someFunction() as ExpectedType;
+```
+
+### ❌ Don't use inline types
+```typescript
+// ❌ Avoid
+function Component({ prop }: { prop: string }) {}
+
+// ✅ Use interfaces
+interface ComponentProps {
+  prop: string;
+}
+
+function Component({ prop }: ComponentProps) {}
+```
+
+## Testing Types
+
+### Component Testing
+```typescript
+// ✅ Proper typing for test utilities
+import { render, screen } from '@testing-library/react';
+
+test('renders component', () => {
+  const props: ComponentProps = {
+    requiredProp: 'test',
+    onAction: jest.fn(),
+  };
+  
+  render(<Component {...props} />);
+  expect(screen.getByText('test')).toBeInTheDocument();
+});
+```
+
+## Strict Mode Compliance
+- All components must work in React.StrictMode
+- No side effects in render functions
+- Proper cleanup in useEffect
+- No deprecated lifecycle methods 

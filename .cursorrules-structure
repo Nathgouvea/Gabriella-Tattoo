@@ -1,0 +1,485 @@
+# Project Structure & File Organization Rules
+
+## Directory Structure
+
+### Required Structure
+
+```
+Gabriella-Tattoo/
+├── src/
+│   ├── components/
+│   │   ├── ui/                    # Reusable UI components
+│   │   ├── figma/                 # Figma-specific components
+│   │   ├── Home.tsx              # Home page component
+│   │   ├── Gallery.tsx           # Gallery page component
+│   │   └── translations.ts       # Multi-language translations
+│   ├── assets/                   # Images and static assets
+│   ├── styles/
+│   │   └── globals.css           # Global styles
+│   ├── App.tsx                   # Main app component
+│   └── main.tsx                  # Application entry point
+├── public/                       # Static files
+├── .cursorrules                  # Main cursor rules
+├── .cursorrules-typescript       # TypeScript specific rules
+├── .cursorrules-styling          # Styling specific rules
+├── .cursorrules-structure        # This file
+├── package.json                  # Dependencies and scripts
+├── vite.config.ts               # Vite configuration
+├── tailwind.config.js           # Tailwind CSS configuration
+├── tsconfig.json                # TypeScript configuration
+├── tsconfig.node.json           # Node.js TypeScript configuration
+├── postcss.config.js            # PostCSS configuration
+├── index.html                   # HTML entry point
+└── README.md                    # Project documentation
+```
+
+## File Naming Conventions
+
+### Components
+
+```
+✅ Correct:
+- Home.tsx
+- Gallery.tsx
+- ImageWithFallback.tsx
+- Button.tsx
+- Card.tsx
+
+❌ Avoid:
+- home.tsx
+- gallery.tsx
+- image-with-fallback.tsx
+- button.tsx
+```
+
+### Utilities and Config Files
+
+```
+✅ Correct:
+- translations.ts
+- utils.ts
+- globals.css
+- vite.config.ts
+- tailwind.config.js
+
+❌ Avoid:
+- Translations.ts
+- Utils.ts
+- Globals.css
+- Vite.config.ts
+```
+
+### Assets
+
+```
+✅ Correct:
+- example-tattoo-1.svg
+- artist-photo.svg
+- logo.svg
+- hero-image.jpg
+
+❌ Avoid:
+- exampleTattoo1.svg
+- artistPhoto.svg
+- Logo.svg
+- hero_image.jpg
+```
+
+## Component Organization
+
+### Component File Structure
+
+```typescript
+// 1. Imports (in order)
+import React from 'react';
+import { Button } from './ui/button';
+import { translations } from './translations';
+
+// 2. Types and interfaces
+interface ComponentProps {
+  // props definition
+}
+
+// 3. Component definition
+export function ComponentName({ prop1, prop2 }: ComponentProps) {
+  // 4. Hooks and state
+  const [state, setState] = useState();
+
+  // 5. Event handlers
+  const handleClick = () => {
+    // handler logic
+  };
+
+  // 6. Render
+  return (
+    // JSX
+  );
+}
+```
+
+### Component Export Patterns
+
+```typescript
+// ✅ Named exports for components
+export function Home() {}
+export function Gallery() {}
+
+// ✅ Named exports for utilities
+export { translations } from "./translations";
+export { buttonVariants } from "./ui/button";
+
+// ✅ Default export for main component
+export default function App() {}
+```
+
+## Import Organization
+
+### Import Order Rules
+
+```typescript
+// 1. React and React-related imports
+import React, { useState, useEffect } from "react";
+
+// 2. Third-party library imports
+import { Button } from "./ui/button";
+import { MapPin, Clock, Instagram } from "lucide-react";
+
+// 3. Internal component imports
+import { Home } from "./components/Home";
+import { Gallery } from "./components/Gallery";
+
+// 4. Type imports
+import type { Language, Page } from "./types";
+
+// 5. Asset imports
+import exampleTattoo1 from "figma:asset/example.svg";
+
+// 6. Style imports (if any)
+import "./Component.css";
+```
+
+### Import Grouping
+
+```typescript
+// Group imports with blank lines between groups
+import React from "react";
+
+import { Button } from "./ui/button";
+import { MapPin } from "lucide-react";
+
+import { Home } from "./components/Home";
+
+import exampleTattoo1 from "figma:asset/example.svg";
+```
+
+## Asset Organization
+
+### Image Assets
+
+```
+src/assets/
+├── tattoos/              # Tattoo portfolio images
+│   ├── butterfly.svg
+│   ├── geometric.svg
+│   └── portrait.svg
+├── photos/               # Artist and studio photos
+│   ├── artist-photo.svg
+│   └── studio.jpg
+├── icons/                # Custom icons
+│   ├── logo.svg
+│   └── custom-icon.svg
+└── backgrounds/          # Background images
+    ├── hero-bg.jpg
+    └── pattern.svg
+```
+
+### Asset Naming
+
+```
+✅ Correct:
+- butterfly-tattoo.svg
+- artist-portrait.jpg
+- studio-interior.jpg
+- logo-white.svg
+- hero-background.jpg
+
+❌ Avoid:
+- butterflyTattoo.svg
+- artistPortrait.jpg
+- studio_interior.jpg
+- LogoWhite.svg
+- heroBackground.jpg
+```
+
+## Configuration Files
+
+### Required Configuration Files
+
+```
+✅ Must exist:
+- package.json
+- vite.config.ts
+- tailwind.config.js
+- tsconfig.json
+- tsconfig.node.json
+- postcss.config.js
+- index.html
+```
+
+### Configuration File Standards
+
+```typescript
+// vite.config.ts - Must include:
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "figma:asset": "./src/assets",
+    },
+  },
+});
+
+// tailwind.config.js - Must include:
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        // Custom colors
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+## Documentation Files
+
+### Required Documentation
+
+```
+✅ Must exist:
+- README.md
+- .cursorrules
+- .cursorrules-typescript
+- .cursorrules-styling
+- .cursorrules-structure
+```
+
+### README.md Structure
+
+```markdown
+# Project Name
+
+## Description
+
+## Features
+
+## Tech Stack
+
+## Getting Started
+
+## Project Structure
+
+## Available Scripts
+
+## Customization
+
+## License
+```
+
+## Git Organization
+
+### .gitignore Requirements
+
+```
+✅ Must ignore:
+- node_modules/
+- dist/
+- .env
+- .DS_Store
+- *.log
+- .vite/
+```
+
+### Commit Message Format
+
+```
+✅ Correct format:
+feat: add new gallery component
+fix: resolve import error in Home component
+docs: update README with new features
+style: update button styling
+refactor: improve component structure
+
+❌ Avoid:
+- added stuff
+- fixed bug
+- updated readme
+```
+
+## File Size Guidelines
+
+### Component Files
+
+```
+✅ Recommended:
+- Small components: < 100 lines
+- Medium components: 100-300 lines
+- Large components: 300-500 lines
+- Very large components: > 500 lines (consider splitting)
+
+❌ Avoid:
+- Monolithic components > 1000 lines
+- Components with too many responsibilities
+```
+
+### Asset File Sizes
+
+```
+✅ Recommended:
+- SVG icons: < 10KB
+- Small images: < 100KB
+- Medium images: < 500KB
+- Large images: < 1MB
+
+❌ Avoid:
+- Unoptimized images > 1MB
+- Unnecessary high-resolution images
+```
+
+## Code Organization Rules
+
+### Function Organization
+
+```typescript
+export function Component() {
+  // 1. Constants and static data
+  const CONSTANTS = { ... };
+
+  // 2. State and hooks
+  const [state, setState] = useState();
+
+  // 3. Computed values
+  const computedValue = useMemo(() => { ... }, []);
+
+  // 4. Event handlers
+  const handleClick = () => { ... };
+
+  // 5. Effects
+  useEffect(() => { ... }, []);
+
+  // 6. Render
+  return <div>...</div>;
+}
+```
+
+### Component Composition
+
+```typescript
+// ✅ Prefer composition over inheritance
+function ParentComponent() {
+  return (
+    <div>
+      <ChildComponent prop1="value" />
+      <AnotherChild prop2="value" />
+    </div>
+  );
+}
+
+// ❌ Avoid deep nesting
+function DeeplyNestedComponent() {
+  return (
+    <div>
+      <div>
+        <div>
+          <div>
+            <Component />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+## Testing Organization
+
+### Test File Structure
+
+```
+src/
+├── components/
+│   ├── __tests__/           # Test files
+│   │   ├── Home.test.tsx
+│   │   └── Gallery.test.tsx
+│   ├── Home.tsx
+│   └── Gallery.tsx
+```
+
+### Test File Naming
+
+```
+✅ Correct:
+- ComponentName.test.tsx
+- ComponentName.spec.tsx
+- utils.test.ts
+- translations.test.ts
+
+❌ Avoid:
+- test.tsx
+- spec.tsx
+- ComponentNameTest.tsx
+```
+
+## Performance Guidelines
+
+### Bundle Organization
+
+```
+✅ Optimize for:
+- Tree shaking
+- Code splitting
+- Lazy loading
+- Asset optimization
+
+❌ Avoid:
+- Large bundle sizes
+- Unnecessary dependencies
+- Unoptimized assets
+```
+
+## Security Guidelines
+
+### File Access
+
+```
+✅ Secure:
+- Validate all inputs
+- Sanitize user data
+- Use HTTPS for external resources
+- Implement proper CORS
+
+❌ Avoid:
+- Exposing sensitive data
+- Trusting user input
+- Using HTTP for sensitive data
+```
+
+## Maintenance Guidelines
+
+### Regular Tasks
+
+```
+✅ Perform regularly:
+- Update dependencies
+- Review and clean unused code
+- Optimize assets
+- Update documentation
+- Run security audits
+
+❌ Avoid:
+- Ignoring dependency updates
+- Accumulating technical debt
+- Skipping code reviews
+```
