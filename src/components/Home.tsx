@@ -173,7 +173,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       {/* Hero Section - Reduced Height */}
       <section
         id="home"
-        className="relative h-[80vh] flex items-center"
+        className="relative h-[60vh] md:h-[80vh] flex items-center"
         role="banner"
         aria-labelledby="hero-title"
       >
