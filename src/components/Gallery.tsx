@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
