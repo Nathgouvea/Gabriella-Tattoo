@@ -13,7 +13,6 @@ import tattoo7 from "../assets/Screenshot 2025-07-26 at 16.26.35.webp";
 import tattoo8 from "../assets/Screenshot 2025-07-26 at 16.26.45.webp";
 import tattoo9 from "../assets/Screenshot 2025-07-26 at 16.26.53.webp";
 import tattoo10 from "../assets/Screenshot 2025-07-26 at 16.27.09.webp";
-
 import tattoo12 from "../assets/Screenshot 2025-07-26 at 16.27.35.webp";
 import tattoo13 from "../assets/Screenshot 2025-07-26 at 16.27.46.webp";
 
@@ -34,7 +33,12 @@ export function Gallery({
 
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Use setTimeout to ensure component is fully mounted
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Portfolio with actual tattoo images
@@ -245,6 +249,7 @@ export function Gallery({
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
               </div>

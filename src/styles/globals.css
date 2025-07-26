@@ -150,6 +150,12 @@
     @apply bg-background text-foreground;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       sans-serif;
+    /* Mobile optimizations */
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    /* Prevent zoom on input focus on iOS */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 
   /* WCAG 2.2 Compliance - Cursor and Target Size Rules */
@@ -250,6 +256,27 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Mobile-specific optimizations to prevent freezing */
+  @media (max-width: 768px) {
+    /* Disable complex animations on mobile */
+    .animate-fade-in-up,
+    .animate-slide-in,
+    .animate-shimmer {
+      animation: none !important;
+    }
+
+    /* Simplify transitions on mobile */
+    * {
+      transition-duration: 0.15s !important;
+    }
+
+    /* Disable backdrop-blur on mobile for better performance */
+    .backdrop-blur-sm,
+    .backdrop-blur-md {
+      backdrop-filter: none !important;
     }
   }
 
@@ -526,11 +553,28 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  /* Mobile optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .gallery-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Disable hover effects on mobile to prevent performance issues */
+@media (hover: none) and (pointer: coarse) {
+  .gallery-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .gallery-item::before {
+    display: none;
+  }
 }
 
 .gallery-item::before {
@@ -560,11 +604,24 @@
   border: 1px solid rgba(212, 175, 55, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
+  /* Mobile optimizations */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .luxury-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* Disable hover effects on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .luxury-card:hover {
+    transform: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  }
 }
 
 /**

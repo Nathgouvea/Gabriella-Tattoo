@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -23,6 +24,42 @@ interface HomeProps {
 
 export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
   const t = translations[language];
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  // Check if device is mobile
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  // Reset navigation state when component unmounts or after timeout
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsNavigating(false);
+    }, 5000); // Reset after 5 seconds as a safety measure
+
+    return () => {
+      clearTimeout(timeout);
+      setIsNavigating(false);
+    };
+  }, []);
+
+  // Mobile-specific navigation handler
+  const handleMobileNavigation = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!isNavigating) {
+      setIsNavigating(true);
+      // Use a small delay on mobile to prevent freezing
+      setTimeout(
+        () => {
+          setCurrentPage("gallery");
+        },
+        isMobile ? 100 : 0
+      );
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -237,11 +274,12 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   <Button
                     variant="outline"
                     size="lg"
-                    onClick={() => setCurrentPage("gallery")}
-                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white shrink min-w-0 whitespace-normal body-text"
+                    onClick={handleMobileNavigation}
+                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white shrink min-w-0 whitespace-normal body-text touch-manipulation"
                     aria-label="View gallery page"
+                    disabled={isNavigating}
                   >
-                    {t.hero.cta}
+                    {isNavigating ? "Loading..." : t.hero.cta}
                   </Button>
                 </div>
 
@@ -293,6 +331,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -301,11 +340,12 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
 
           <div className="text-center mt-12">
             <Button
-              onClick={() => setCurrentPage("gallery")}
-              className="px-8 py-4 gradient-button hover:gradient-button text-white shrink min-w-0 whitespace-normal body-text"
+              onClick={handleMobileNavigation}
+              className="px-8 py-4 gradient-button hover:gradient-button text-white shrink min-w-0 whitespace-normal body-text touch-manipulation"
               aria-label="View full gallery of tattoo work"
+              disabled={isNavigating}
             >
-              {t.portfolio.viewGallery}
+              {isNavigating ? "Loading..." : t.portfolio.viewGallery}
               <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
           </div>
