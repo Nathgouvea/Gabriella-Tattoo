@@ -88,7 +88,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="logo-font text-soft-black" role="banner">
-              Gabriela Tattoo
+              Gabriella Tattoo
             </div>
 
             <div
@@ -184,7 +184,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             alt="Fine line tattoo background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 gradient-hero"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         {/* Content */}
@@ -195,21 +195,18 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 <div className="space-y-4">
                   <Badge
                     variant="outline"
-                    className="text-xs px-4 py-2 bg-white/90 border-gray-200"
+                    className="text-xs px-4 py-2 bg-white/90 border-white/30 text-soft-black"
                   >
                     <MapPin className="w-3 h-3 mr-1" />
                     Philadelphia, PA
                   </Badge>
                   <h1
                     id="hero-title"
-                    className="hero-title text-6xl lg:text-8xl"
+                    className="hero-title text-6xl lg:text-8xl text-white"
                   >
                     {t.hero.title}
                   </h1>
-                  <h2 className="text-xl lg:text-2xl body-text">
-                    {t.hero.subtitle}
-                  </h2>
-                  <p className="text-lg body-text leading-relaxed max-w-xl">
+                  <p className="text-lg body-text leading-relaxed max-w-xl text-white">
                     {t.hero.description}
                   </p>
                 </div>
@@ -237,7 +234,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     variant="outline"
                     size="lg"
                     onClick={() => scrollToSection("portfolio")}
-                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm"
+                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white"
                     aria-label="View portfolio section"
                   >
                     {t.hero.cta}
@@ -245,8 +242,8 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 </div>
 
                 <div className="pt-4">
-                  <p className="text-sm text-medium-gray bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full inline-block">
-                    ✨ To book a tattoo, send us a DM on Instagram
+                  <p className="text-sm text-white bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full inline-block">
+                    ✨ Have questions? Ready to book? Send us a DM on Instagram!
                   </p>
                 </div>
               </div>
@@ -338,7 +335,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
                     src={artistPhoto}
-                    alt="Gabriela, fine line tattoo artist"
+                    alt="Gabriella, fine line tattoo artist"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -527,27 +524,27 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
         </div>
       </section>
 
-      {/* Footer - Updated with soft gray gradient and Gabriela branding */}
+      {/* Footer - Updated with black gradient and shine effect */}
       <footer
-        className="gradient-footer text-gray-800 py-16 px-6"
+        className="gradient-footer text-white py-16 px-6"
         role="contentinfo"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="logo-font text-2xl mb-4 text-gray-800">
-                Gabriela Tattoo
+              <h3 className="logo-font text-2xl mb-4 text-white">
+                Gabriella Tattoo
               </h3>
-              <p className="text-gray-600 mb-4">Philadelphia, PA</p>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-300 mb-4">Philadelphia, PA</p>
+              <p className="text-gray-400 text-sm">
                 Fine line tattoo artistry with 5+ years of experience
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-gray-800">Book Your Tattoo</h4>
+              <h4 className="text-lg mb-4 text-white">Book Your Tattoo</h4>
               <div className="space-y-3">
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-300 text-sm">
                   🎨 To book a tattoo, DM us on Instagram for personalized
                   consultation
                 </p>
@@ -555,7 +552,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   href="https://instagram.com/gabriella_tattoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-800 hover:text-gray-600 transition-colors"
+                  className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -565,24 +562,24 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-gray-800">Credits</h4>
-              <p className="text-gray-600 text-sm mb-2">
+              <h4 className="text-lg mb-4 text-white">Credits</h4>
+              <p className="text-gray-300 text-sm mb-2">
                 Made with love by{" "}
                 <a
                   href="#"
-                  className="text-gray-800 hover:text-gray-600 transition-colors"
+                  className="text-white hover:text-gray-300 transition-colors"
                 >
                   Picky Pixels Studio
                 </a>
               </p>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-400 text-xs">
                 Crafting beautiful web experiences
               </p>
             </div>
           </div>
 
-          <div className="border-t border-gray-300 mt-12 pt-8 text-center">
-            <p className="text-gray-500 text-sm">{t.footer.rights}</p>
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+            <p className="text-gray-400 text-sm">{t.footer.rights}</p>
           </div>
         </div>
       </footer>

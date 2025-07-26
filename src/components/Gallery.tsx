@@ -332,27 +332,27 @@ export function Gallery({
         </div>
       </section>
 
-      {/* Footer - Updated with soft gray gradient and Gabriela branding */}
+      {/* Footer - Updated with black gradient and shine effect */}
       <footer
-        className="gradient-footer text-gray-800 py-16 px-6"
+        className="gradient-footer text-white py-16 px-6"
         role="contentinfo"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="logo-font text-2xl mb-4 text-gray-800">
+              <h3 className="logo-font text-2xl mb-4 text-white">
                 Gabriela Tattoo
               </h3>
-              <p className="text-gray-600 mb-4">Philadelphia, PA</p>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-300 mb-4">Philadelphia, PA</p>
+              <p className="text-gray-400 text-sm">
                 Fine line tattoo artistry with 5+ years of experience
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-gray-800">Book Your Tattoo</h4>
+              <h4 className="text-lg mb-4 text-white">Book Your Tattoo</h4>
               <div className="space-y-3">
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-300 text-sm">
                   🎨 To book a tattoo, DM us on Instagram for personalized
                   consultation
                 </p>
@@ -360,7 +360,7 @@ export function Gallery({
                   href="https://instagram.com/gabriella_tattoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-800 hover:text-gray-600 transition-colors"
+                  className="inline-flex items-center text-white hover:text-gray-300 transition-colors"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -370,24 +370,24 @@ export function Gallery({
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-gray-800">Credits</h4>
-              <p className="text-gray-600 text-sm mb-2">
+              <h4 className="text-lg mb-4 text-white">Credits</h4>
+              <p className="text-gray-300 text-sm mb-2">
                 Made with love by{" "}
                 <a
                   href="#"
-                  className="text-gray-800 hover:text-gray-600 transition-colors"
+                  className="text-white hover:text-gray-300 transition-colors"
                 >
                   Picky Pixels Studio
                 </a>
               </p>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-400 text-xs">
                 Crafting beautiful web experiences
               </p>
             </div>
           </div>
 
-          <div className="border-t border-gray-300 mt-12 pt-8 text-center">
-            <p className="text-gray-500 text-sm">{t.footer.rights}</p>
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+            <p className="text-gray-400 text-sm">{t.footer.rights}</p>
           </div>
         </div>
       </footer>
