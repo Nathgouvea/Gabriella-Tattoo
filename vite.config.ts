@@ -9,5 +9,5 @@ export default defineConfig({
       "figma:asset": "./src/assets",
     },
   },
-  base: "/Gabriella-Tattoo/",
+  base: "/",
 });
