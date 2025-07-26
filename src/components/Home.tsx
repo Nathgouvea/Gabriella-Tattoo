@@ -238,7 +238,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     variant="outline"
                     size="lg"
                     onClick={() => setCurrentPage("gallery")}
-                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white shrink min-w-0 whitespace-normal"
+                    className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white shrink min-w-0 whitespace-normal font-sans"
                     aria-label="View gallery page"
                   >
                     {t.hero.cta}
@@ -302,7 +302,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
           <div className="text-center mt-12">
             <Button
               onClick={() => setCurrentPage("gallery")}
-              className="px-8 py-4 gradient-button hover:gradient-button text-white shrink min-w-0 whitespace-normal"
+              className="px-8 py-4 gradient-button hover:gradient-button text-white shrink min-w-0 whitespace-normal font-sans"
               aria-label="View full gallery of tattoo work"
             >
               {t.portfolio.viewGallery}
