@@ -34,37 +34,37 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
     {
       id: 1,
       src: tattoo1,
-      alt: "Fine line butterfly tattoo",
+      alt: t.portfolio.images.butterfly,
       title: "Fine Line Butterfly",
     },
     {
       id: 2,
       src: tattoo2,
-      alt: "Minimalist floral tattoo",
+      alt: t.portfolio.images.floral,
       title: "Minimalist Floral",
     },
     {
       id: 3,
       src: tattoo3,
-      alt: "Geometric pattern tattoo",
+      alt: t.portfolio.images.geometric,
       title: "Geometric Pattern",
     },
     {
       id: 4,
       src: tattoo4,
-      alt: "Delicate rose tattoo",
+      alt: t.portfolio.images.rose,
       title: "Delicate Rose",
     },
     {
       id: 5,
       src: tattoo5,
-      alt: "Abstract design tattoo",
+      alt: t.portfolio.images.abstract,
       title: "Abstract Design",
     },
     {
       id: 6,
       src: tattoo6,
-      alt: "Nature elements tattoo",
+      alt: t.portfolio.images.nature,
       title: "Nature Elements",
     },
   ];
@@ -182,7 +182,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
           <ImageWithFallback
             src={heroImage}
             alt="Fine line tattoo background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -202,7 +202,11 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   </Badge>
                   <h1
                     id="hero-title"
-                    className="hero-title text-6xl lg:text-8xl text-white"
+                    className={`hero-title text-white ${
+                      language === "en"
+                        ? "text-6xl lg:text-8xl"
+                        : "text-5xl lg:text-7xl"
+                    }`}
                   >
                     {t.hero.title}
                   </h1>
@@ -224,7 +228,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     aria-label="Send a direct message to book a tattoo on Instagram"
                   >
                     <Instagram className="w-5 h-5 mr-2" aria-hidden="true" />
-                    Send a DM to Book
+                    {t.hero.dmButton}
                     <ArrowRight
                       className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
                       aria-hidden="true"
@@ -233,9 +237,9 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   <Button
                     variant="outline"
                     size="lg"
-                    onClick={() => scrollToSection("portfolio")}
+                    onClick={() => setCurrentPage("gallery")}
                     className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm text-white"
-                    aria-label="View portfolio section"
+                    aria-label="View gallery page"
                   >
                     {t.hero.cta}
                   </Button>
@@ -243,7 +247,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
 
                 <div className="pt-4">
                   <p className="text-sm text-white bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full inline-block">
-                    ✨ Have questions? Ready to book? Send us a DM on Instagram!
+                    {t.hero.dmNote}
                   </p>
                 </div>
               </div>
@@ -265,12 +269,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
               id="portfolio-title"
               className="text-4xl lg:text-5xl mb-6 text-soft-black"
             >
-              Explore Our Artistry
+              {t.portfolio.title}
             </h2>
             <p className="text-lg body-text max-w-2xl mx-auto">
-              Discover a collection of delicate, minimalist tattoos that
-              showcase the beauty of fine-line artistry. Each piece tells a
-              unique story through precision and elegance.
+              {t.portfolio.description}
             </p>
           </div>
 
@@ -293,15 +295,6 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-base mb-1">{image.title}</h3>
-                  <p className="text-sm text-gray-300">Fine line tattoo</p>
-                </div>
               </div>
             ))}
           </div>
@@ -312,7 +305,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
               className="px-8 py-4 gradient-button hover:gradient-button text-white"
               aria-label="View full gallery of tattoo work"
             >
-              View Full Gallery
+              {t.portfolio.viewGallery}
               <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
           </div>
@@ -335,7 +328,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <ImageWithFallback
                     src={artistPhoto}
-                    alt="Gabriella, fine line tattoo artist"
+                    alt="Gabriela, fine line tattoo artist"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -535,18 +528,15 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
               <h3 className="logo-font text-2xl mb-4 text-white">
                 Gabriella Tattoo
               </h3>
-              <p className="text-gray-300 mb-4">Philadelphia, PA</p>
-              <p className="text-gray-400 text-sm">
-                Fine line tattoo artistry with 5+ years of experience
-              </p>
+              <p className="text-gray-300 mb-4">{t.footer.location}</p>
+              <p className="text-gray-400 text-sm">{t.footer.experience}</p>
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-white">Book Your Tattoo</h4>
+              <h4 className="text-lg mb-4 text-white">{t.footer.bookTitle}</h4>
               <div className="space-y-3">
                 <p className="text-gray-300 text-sm">
-                  🎨 To book a tattoo, DM us on Instagram for personalized
-                  consultation
+                  {t.footer.bookDescription}
                 </p>
                 <a
                   href="https://instagram.com/gabriella_tattoo"
@@ -562,19 +552,19 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-white">Credits</h4>
+              <h4 className="text-lg mb-4 text-white">{t.footer.credits}</h4>
               <p className="text-gray-300 text-sm mb-2">
-                Made with love by{" "}
+                {t.footer.madeWithLove}{" "}
                 <a
-                  href="#"
+                  href="https://pickypixels.studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   Picky Pixels Studio
                 </a>
               </p>
-              <p className="text-gray-400 text-xs">
-                Crafting beautiful web experiences
-              </p>
+              <p className="text-gray-400 text-xs">{t.footer.crafting}</p>
             </div>
           </div>
 

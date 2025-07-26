@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -31,97 +31,87 @@ export function Gallery({
   setCurrentPage,
 }: GalleryProps) {
   const t = translations[language];
-  const [filter, setFilter] = useState("all");
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Portfolio with actual tattoo images
   const portfolioItems = [
     {
       id: 1,
       image: tattoo1,
-      title: "Fine Line Butterfly",
+      title: t.gallery.items.butterfly,
       category: "nature",
     },
     {
       id: 2,
       image: tattoo2,
-      title: "Minimalist Floral",
+      title: t.gallery.items.floral,
       category: "floral",
     },
     {
       id: 3,
       image: tattoo3,
-      title: "Geometric Pattern",
+      title: t.gallery.items.geometric,
       category: "geometric",
     },
     {
       id: 4,
       image: tattoo4,
-      title: "Delicate Rose",
+      title: t.gallery.items.rose,
       category: "floral",
     },
     {
       id: 5,
       image: tattoo5,
-      title: "Abstract Design",
+      title: t.gallery.items.abstract,
       category: "geometric",
     },
     {
       id: 6,
       image: tattoo6,
-      title: "Nature Elements",
+      title: t.gallery.items.nature,
       category: "nature",
     },
     {
       id: 7,
       image: tattoo7,
-      title: "Fine Line Portrait",
+      title: t.gallery.items.portrait,
       category: "portrait",
     },
     {
       id: 8,
       image: tattoo8,
-      title: "Ornate Sleeve Design",
+      title: t.gallery.items.sleeve,
       category: "geometric",
     },
     {
       id: 9,
       image: tattoo9,
-      title: "Minimalist Artwork",
+      title: t.gallery.items.artwork,
       category: "geometric",
     },
     {
       id: 10,
       image: tattoo10,
-      title: "Elegant Script",
+      title: t.gallery.items.script,
       category: "lettering",
     },
     {
       id: 11,
       image: tattoo12,
-      title: "Geometric Composition",
+      title: t.gallery.items.composition,
       category: "geometric",
     },
     {
       id: 12,
       image: tattoo13,
-      title: "Delicate Linework",
+      title: t.gallery.items.linework,
       category: "floral",
     },
   ];
-
-  const categories = [
-    { key: "all", label: "All" },
-    { key: "nature", label: "Nature" },
-    { key: "geometric", label: "Geometric" },
-    { key: "portrait", label: "Portrait" },
-    { key: "floral", label: "Floral" },
-    { key: "lettering", label: "Lettering" },
-  ];
-
-  const filteredItems =
-    filter === "all"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === filter);
 
   return (
     <div className="min-h-screen bg-white">
@@ -130,7 +120,7 @@ export function Gallery({
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-soft-black text-white px-4 py-2 rounded z-50"
       >
-        Skip to main content
+        {t.gallery.skipToContent}
       </a>
 
       {/* Navigation */}
@@ -139,7 +129,7 @@ export function Gallery({
         role="navigation"
         aria-label="Gallery navigation"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-6 py-4 relative">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
@@ -148,11 +138,14 @@ export function Gallery({
               aria-label="Return to home page"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span>Back to Home</span>
+              <span>{t.gallery.backToHome}</span>
             </Button>
 
-            <div className="logo-font text-soft-black" role="banner">
-              Portfolio Gallery
+            <div
+              className="absolute left-1/2 transform -translate-x-1/2 logo-font text-soft-black"
+              role="banner"
+            >
+              {t.gallery.portfolioTitle}
             </div>
 
             <div className="flex items-center space-x-4">
@@ -216,7 +209,7 @@ export function Gallery({
 
       {/* Gallery Header */}
       <section
-        className="pt-24 pb-12 px-6 gradient-luxury"
+        className="pt-32 pb-12 px-6 gradient-luxury"
         role="banner"
         aria-labelledby="gallery-title"
       >
@@ -225,46 +218,11 @@ export function Gallery({
             id="gallery-title"
             className="hero-title text-5xl lg:text-6xl mb-6 text-soft-black"
           >
-            Fine Line Portfolio
+            {t.gallery.title}
           </h1>
           <p className="text-lg body-text max-w-2xl mx-auto mb-8">
-            Explore our complete collection of delicate, minimalist tattoos.
-            Each piece represents hours of careful planning and precise
-            execution, showcasing the artistry of fine-line tattooing.
+            {t.gallery.description}
           </p>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section
-        className="py-8 px-6 bg-white border-b border-gray-100"
-        role="region"
-        aria-labelledby="filter-title"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div
-            className="flex flex-wrap justify-center gap-3"
-            role="group"
-            aria-label="Filter gallery by category"
-          >
-            {categories.map((category) => (
-              <Button
-                key={category.key}
-                variant={filter === category.key ? "default" : "outline"}
-                size="sm"
-                onClick={() => setFilter(category.key)}
-                className={`px-4 py-2 ${
-                  filter === category.key
-                    ? "gradient-button text-white"
-                    : "border-gray-300 hover:bg-gray-50"
-                }`}
-                aria-label={`Filter by ${category.label}`}
-                aria-pressed={filter === category.key}
-              >
-                {category.label}
-              </Button>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -276,7 +234,7 @@ export function Gallery({
             role="list"
             aria-label="Gallery of tattoo work"
           >
-            {filteredItems.map((item) => (
+            {portfolioItems.map((item) => (
               <div
                 key={item.id}
                 className="gallery-item group relative rounded-xl overflow-hidden shadow-md"
@@ -289,17 +247,6 @@ export function Gallery({
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-sm mb-1">{item.title}</h3>
-                  <p className="text-xs text-gray-300 capitalize">
-                    {item.category}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
@@ -310,12 +257,10 @@ export function Gallery({
       <section className="py-20 px-6 gradient-elegant">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="hero-title text-4xl lg:text-5xl mb-6 text-soft-black">
-            Ready for Your Fine Line Tattoo?
+            {t.cta.title}
           </h2>
           <p className="text-lg body-text mb-8 max-w-2xl mx-auto">
-            Let's create something beautiful together. Send me a message on
-            Instagram to discuss your design ideas and book your personalized
-            consultation.
+            {t.cta.description}
           </p>
 
           <Button
@@ -327,7 +272,7 @@ export function Gallery({
             aria-label="Send a message to book a tattoo on Instagram"
           >
             <Instagram className="w-5 h-5 mr-2" aria-hidden="true" />
-            Message @gabriella_tattoo
+            {t.cta.button}
           </Button>
         </div>
       </section>
@@ -341,20 +286,17 @@ export function Gallery({
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="logo-font text-2xl mb-4 text-white">
-                Gabriela Tattoo
+                Gabriella Tattoo
               </h3>
-              <p className="text-gray-300 mb-4">Philadelphia, PA</p>
-              <p className="text-gray-400 text-sm">
-                Fine line tattoo artistry with 5+ years of experience
-              </p>
+              <p className="text-gray-300 mb-4">{t.footer.location}</p>
+              <p className="text-gray-400 text-sm">{t.footer.experience}</p>
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-white">Book Your Tattoo</h4>
+              <h4 className="text-lg mb-4 text-white">{t.footer.bookTitle}</h4>
               <div className="space-y-3">
                 <p className="text-gray-300 text-sm">
-                  🎨 To book a tattoo, DM us on Instagram for personalized
-                  consultation
+                  {t.footer.bookDescription}
                 </p>
                 <a
                   href="https://instagram.com/gabriella_tattoo"
@@ -370,19 +312,19 @@ export function Gallery({
             </div>
 
             <div>
-              <h4 className="text-lg mb-4 text-white">Credits</h4>
+              <h4 className="text-lg mb-4 text-white">{t.footer.credits}</h4>
               <p className="text-gray-300 text-sm mb-2">
-                Made with love by{" "}
+                {t.footer.madeWithLove}{" "}
                 <a
-                  href="#"
+                  href="https://pickypixels.studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-gray-300 transition-colors"
                 >
                   Picky Pixels Studio
                 </a>
               </p>
-              <p className="text-gray-400 text-xs">
-                Crafting beautiful web experiences
-              </p>
+              <p className="text-gray-400 text-xs">{t.footer.crafting}</p>
             </div>
           </div>
 
