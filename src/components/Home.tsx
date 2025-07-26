@@ -204,8 +204,8 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     id="hero-title"
                     className={`hero-title text-white ${
                       language === "en"
-                        ? "text-4xl sm:text-6xl lg:text-8xl"
-                        : "text-3xl sm:text-5xl lg:text-7xl"
+                        ? "text-5xl sm:text-6xl lg:text-8xl"
+                        : "text-4xl sm:text-5xl lg:text-7xl"
                     }`}
                   >
                     {t.hero.title}
