@@ -4,13 +4,13 @@ import { Badge } from "./ui/badge";
 import { MapPin, Clock, Instagram, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { translations } from "./translations";
-import exampleTattoo1 from "figma:asset/9bc706fd2d858c8d9e5e2c453a2f7c176bfacc29.svg";
-import exampleTattoo2 from "figma:asset/b099e7919f42b1e0778bada2617c6b0fd70c9b5b.svg";
-import artistPhoto from "figma:asset/148328178be8daa2960330df3b6254424a4f2fb9.svg";
-import tattooExample1 from "figma:asset/2d84f200dbfea1ff64ef5ba618db7652ce0e935c.svg";
-import tattooExample2 from "figma:asset/07a9a0df8db5c4c3bd7e0dd0838b0919c3cfe184.svg";
-import newTattoo2 from "figma:asset/96619490dcdef265bdca81447264a9ec2b776985.svg";
-import newTattoo3 from "figma:asset/c9a08f084654744d9058dbf5f6ce6288d87638b2.svg";
+import artistPhoto from "../assets/gabriella-tattoo-artist.webp";
+import tattoo1 from "../assets/Screenshot 2025-07-26 at 16.21.47.webp";
+import tattoo2 from "../assets/Screenshot 2025-07-26 at 16.22.16.webp";
+import tattoo3 from "../assets/Screenshot 2025-07-26 at 16.23.04.webp";
+import tattoo4 from "../assets/Screenshot 2025-07-26 at 16.23.23.webp";
+import tattoo5 from "../assets/Screenshot 2025-07-26 at 16.24.02.webp";
+import tattoo6 from "../assets/Screenshot 2025-07-26 at 16.24.43.webp";
 
 type Language = "en" | "pt" | "es";
 
@@ -28,43 +28,43 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Updated portfolio images - removed bamboo plant, made all uniform size
+  // Portfolio images with actual tattoo work
   const portfolioImages = [
     {
       id: 1,
-      src: exampleTattoo1,
-      alt: "Delicate butterfly fine line tattoo",
-      title: "Butterfly Art",
+      src: tattoo1,
+      alt: "Fine line butterfly tattoo",
+      title: "Fine Line Butterfly",
     },
     {
       id: 2,
-      src: exampleTattoo2,
-      alt: "Geometric fine line tattoo",
-      title: "Geometric Design",
+      src: tattoo2,
+      alt: "Minimalist floral tattoo",
+      title: "Minimalist Floral",
     },
     {
       id: 3,
-      src: newTattoo2,
-      alt: "Eye with celestial elements tattoo",
-      title: "Celestial Eye",
+      src: tattoo3,
+      alt: "Geometric pattern tattoo",
+      title: "Geometric Pattern",
     },
     {
       id: 4,
-      src: newTattoo3,
-      alt: "Intricate sleeve tattoo design",
-      title: "Ornate Sleeve",
+      src: tattoo4,
+      alt: "Delicate rose tattoo",
+      title: "Delicate Rose",
     },
     {
       id: 5,
-      src: tattooExample1,
-      alt: "Realistic portrait tattoo",
-      title: "Portrait Art",
+      src: tattoo5,
+      alt: "Abstract design tattoo",
+      title: "Abstract Design",
     },
     {
       id: 6,
-      src: tattooExample2,
-      alt: "Wing design tattoo",
-      title: "Wing Design",
+      src: tattoo6,
+      alt: "Nature elements tattoo",
+      title: "Nature Elements",
     },
   ];
 
@@ -144,7 +144,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src={newTattoo3}
+            src={tattoo3}
             alt="Fine line tattoo background"
             className="w-full h-full object-cover"
           />

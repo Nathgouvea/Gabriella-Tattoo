@@ -3,12 +3,19 @@ import { Button } from "./ui/button";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { translations } from "./translations";
-import exampleTattoo1 from "figma:asset/9bc706fd2d858c8d9e5e2c453a2f7c176bfacc29.svg";
-import exampleTattoo2 from "figma:asset/b099e7919f42b1e0778bada2617c6b0fd70c9b5b.svg";
-import tattooExample1 from "figma:asset/2d84f200dbfea1ff64ef5ba618db7652ce0e935c.svg";
-import tattooExample2 from "figma:asset/07a9a0df8db5c4c3bd7e0dd0838b0919c3cfe184.svg";
-import newTattoo2 from "figma:asset/96619490dcdef265bdca81447264a9ec2b776985.svg";
-import newTattoo3 from "figma:asset/c9a08f084654744d9058dbf5f6ce6288d87638b2.svg";
+import tattoo1 from "../assets/Screenshot 2025-07-26 at 16.21.47.webp";
+import tattoo2 from "../assets/Screenshot 2025-07-26 at 16.22.16.webp";
+import tattoo3 from "../assets/Screenshot 2025-07-26 at 16.23.04.webp";
+import tattoo4 from "../assets/Screenshot 2025-07-26 at 16.23.23.webp";
+import tattoo5 from "../assets/Screenshot 2025-07-26 at 16.24.02.webp";
+import tattoo6 from "../assets/Screenshot 2025-07-26 at 16.24.43.webp";
+import tattoo7 from "../assets/Screenshot 2025-07-26 at 16.26.35.webp";
+import tattoo8 from "../assets/Screenshot 2025-07-26 at 16.26.45.webp";
+import tattoo9 from "../assets/Screenshot 2025-07-26 at 16.26.53.webp";
+import tattoo10 from "../assets/Screenshot 2025-07-26 at 16.27.09.webp";
+
+import tattoo12 from "../assets/Screenshot 2025-07-26 at 16.27.35.webp";
+import tattoo13 from "../assets/Screenshot 2025-07-26 at 16.27.46.webp";
 
 type Language = "en" | "pt" | "es";
 
@@ -26,85 +33,79 @@ export function Gallery({
   const t = translations[language];
   const [filter, setFilter] = useState("all");
 
-  // Updated portfolio - removed bamboo plant, uniform sizes
+  // Portfolio with actual tattoo images
   const portfolioItems = [
     {
       id: 1,
-      image: exampleTattoo1,
-      title: "Delicate Butterfly",
+      image: tattoo1,
+      title: "Fine Line Butterfly",
       category: "nature",
     },
     {
       id: 2,
-      image: newTattoo2,
-      title: "Celestial Eye",
-      category: "portrait",
+      image: tattoo2,
+      title: "Minimalist Floral",
+      category: "floral",
     },
     {
       id: 3,
-      image: newTattoo3,
-      title: "Ornate Sleeve",
+      image: tattoo3,
+      title: "Geometric Pattern",
       category: "geometric",
     },
     {
       id: 4,
-      image: exampleTattoo2,
-      title: "Geometric Symbols",
-      category: "geometric",
+      image: tattoo4,
+      title: "Delicate Rose",
+      category: "floral",
     },
     {
       id: 5,
-      image: tattooExample1,
-      title: "Realistic Portrait",
-      category: "portrait",
+      image: tattoo5,
+      title: "Abstract Design",
+      category: "geometric",
     },
     {
       id: 6,
-      image: tattooExample2,
-      title: "Wing Design",
+      image: tattoo6,
+      title: "Nature Elements",
       category: "nature",
     },
     {
       id: 7,
-      image:
-        "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&h=800&fit=crop",
-      title: "Floral Branch",
-      category: "nature",
+      image: tattoo7,
+      title: "Fine Line Portrait",
+      category: "portrait",
     },
     {
       id: 8,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=600&fit=crop",
-      title: "Minimalist Rose",
-      category: "floral",
-    },
-    {
-      id: 9,
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      title: "Script Lettering",
-      category: "lettering",
-    },
-    {
-      id: 10,
-      image:
-        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=600&fit=crop",
-      title: "Constellation",
+      image: tattoo8,
+      title: "Ornate Sleeve Design",
       category: "geometric",
     },
     {
+      id: 9,
+      image: tattoo9,
+      title: "Minimalist Artwork",
+      category: "geometric",
+    },
+    {
+      id: 10,
+      image: tattoo10,
+      title: "Elegant Script",
+      category: "lettering",
+    },
+    {
       id: 11,
-      image:
-        "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=600&fit=crop",
-      title: "Abstract Lines",
+      image: tattoo12,
+      title: "Geometric Composition",
       category: "geometric",
     },
     {
       id: 12,
-      image:
-        "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&h=800&fit=crop",
-      title: "Line Art Portrait",
-      category: "portrait",
+      image: tattoo13,
+      title: "Delicate Linework",
+      category: "floral",
     },
   ];
 
