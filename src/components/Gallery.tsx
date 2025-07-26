@@ -125,29 +125,50 @@ export function Gallery({
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-soft-black text-white px-4 py-2 rounded z-50"
+      >
+        Skip to main content
+      </a>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav
+        className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100"
+        role="navigation"
+        aria-label="Gallery navigation"
+      >
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={() => setCurrentPage("home")}
               className="flex items-center space-x-2 text-medium-gray hover:text-soft-black"
+              aria-label="Return to home page"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               <span>Back to Home</span>
             </Button>
 
-            <div className="logo-font text-soft-black">Portfolio Gallery</div>
+            <div className="logo-font text-soft-black" role="banner">
+              Portfolio Gallery
+            </div>
 
             <div className="flex items-center space-x-4">
               {/* Language Switcher */}
-              <div className="flex items-center space-x-1">
+              <div
+                className="flex items-center space-x-1"
+                role="group"
+                aria-label="Language selection"
+              >
                 <Button
                   variant={language === "en" ? "default" : "ghost"}
                   size="sm"
                   onClick={() => setLanguage("en")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to English"
+                  aria-pressed={language === "en"}
                 >
                   EN
                 </Button>
@@ -156,6 +177,8 @@ export function Gallery({
                   size="sm"
                   onClick={() => setLanguage("pt")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to Portuguese"
+                  aria-pressed={language === "pt"}
                 >
                   PT
                 </Button>
@@ -164,6 +187,8 @@ export function Gallery({
                   size="sm"
                   onClick={() => setLanguage("es")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to Spanish"
+                  aria-pressed={language === "es"}
                 >
                   ES
                 </Button>
@@ -174,13 +199,14 @@ export function Gallery({
                 href="https://instagram.com/gabriella_tattoo"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
               >
                 <Button
                   variant="ghost"
                   size="sm"
                   className="text-medium-gray hover:text-soft-black"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-4 h-4" aria-hidden="true" />
                 </Button>
               </a>
             </div>
@@ -189,9 +215,16 @@ export function Gallery({
       </nav>
 
       {/* Gallery Header */}
-      <section className="pt-24 pb-12 px-6 gradient-luxury">
+      <section
+        className="pt-24 pb-12 px-6 gradient-luxury"
+        role="banner"
+        aria-labelledby="gallery-title"
+      >
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="hero-title text-5xl lg:text-6xl mb-6 text-soft-black">
+          <h1
+            id="gallery-title"
+            className="hero-title text-5xl lg:text-6xl mb-6 text-soft-black"
+          >
             Fine Line Portfolio
           </h1>
           <p className="text-lg body-text max-w-2xl mx-auto mb-8">
@@ -203,9 +236,17 @@ export function Gallery({
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 px-6 bg-white border-b border-gray-100">
+      <section
+        className="py-8 px-6 bg-white border-b border-gray-100"
+        role="region"
+        aria-labelledby="filter-title"
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div
+            className="flex flex-wrap justify-center gap-3"
+            role="group"
+            aria-label="Filter gallery by category"
+          >
             {categories.map((category) => (
               <Button
                 key={category.key}
@@ -217,6 +258,8 @@ export function Gallery({
                     ? "gradient-button text-white"
                     : "border-gray-300 hover:bg-gray-50"
                 }`}
+                aria-label={`Filter by ${category.label}`}
+                aria-pressed={filter === category.key}
               >
                 {category.label}
               </Button>
@@ -226,13 +269,18 @@ export function Gallery({
       </section>
 
       {/* Gallery Grid - Uniform Size, Responsive */}
-      <section className="py-16 px-6 bg-white">
+      <section id="main-content" className="py-16 px-6 bg-white" role="main">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            role="list"
+            aria-label="Gallery of tattoo work"
+          >
             {filteredItems.map((item) => (
               <div
                 key={item.id}
                 className="gallery-item group relative rounded-xl overflow-hidden shadow-md"
+                role="listitem"
               >
                 <div className="aspect-[4/5] w-full">
                   <ImageWithFallback
@@ -276,15 +324,19 @@ export function Gallery({
             onClick={() =>
               window.open("https://instagram.com/gabriella_tattoo", "_blank")
             }
+            aria-label="Send a message to book a tattoo on Instagram"
           >
-            <Instagram className="w-5 h-5 mr-2" />
+            <Instagram className="w-5 h-5 mr-2" aria-hidden="true" />
             Message @gabriella_tattoo
           </Button>
         </div>
       </section>
 
       {/* Footer - Updated with soft gray gradient and Gabriela branding */}
-      <footer className="gradient-footer text-gray-800 py-16 px-6">
+      <footer
+        className="gradient-footer text-gray-800 py-16 px-6"
+        role="contentinfo"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -309,8 +361,9 @@ export function Gallery({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-gray-800 hover:text-gray-600 transition-colors"
+                  aria-label="Follow us on Instagram"
                 >
-                  <Instagram className="w-4 h-4 mr-2" />
+                  <Instagram className="w-4 h-4 mr-2" aria-hidden="true" />
                   @gabriella_tattoo
                 </a>
               </div>

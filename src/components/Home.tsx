@@ -5,6 +5,7 @@ import { MapPin, Clock, Instagram, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { translations } from "./translations";
 import artistPhoto from "../assets/gabriella-tattoo-artist.webp";
+import heroImage from "../assets/image-eyes-hero-section.webp";
 import tattoo1 from "../assets/Screenshot 2025-07-26 at 16.21.47.webp";
 import tattoo2 from "../assets/Screenshot 2025-07-26 at 16.22.16.webp";
 import tattoo3 from "../assets/Screenshot 2025-07-26 at 16.23.04.webp";
@@ -70,22 +71,41 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-soft-black text-white px-4 py-2 rounded z-50"
+      >
+        Skip to main content
+      </a>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav
+        className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100"
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="logo-font text-soft-black">Gabriela Tattoo</div>
+            <div className="logo-font text-soft-black" role="banner">
+              Gabriela Tattoo
+            </div>
 
-            <div className="hidden md:flex items-center space-x-8">
+            <div
+              className="hidden md:flex items-center space-x-8"
+              role="menubar"
+            >
               <button
                 onClick={() => scrollToSection("home")}
                 className="text-medium-gray hover:text-soft-black transition-colors"
+                aria-label="Go to home section"
               >
                 {t.nav.home}
               </button>
               <button
                 onClick={() => setCurrentPage("gallery")}
                 className="text-medium-gray hover:text-soft-black transition-colors"
+                aria-label="View gallery"
               >
                 {t.nav.gallery}
               </button>
@@ -93,12 +113,18 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
 
             <div className="flex items-center space-x-4">
               {/* Language Switcher */}
-              <div className="flex items-center space-x-1">
+              <div
+                className="flex items-center space-x-1"
+                role="group"
+                aria-label="Language selection"
+              >
                 <Button
                   variant={language === "en" ? "default" : "ghost"}
                   size="sm"
                   onClick={() => setLanguage("en")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to English"
+                  aria-pressed={language === "en"}
                 >
                   EN
                 </Button>
@@ -107,6 +133,8 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   size="sm"
                   onClick={() => setLanguage("pt")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to Portuguese"
+                  aria-pressed={language === "pt"}
                 >
                   PT
                 </Button>
@@ -115,6 +143,8 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   size="sm"
                   onClick={() => setLanguage("es")}
                   className="h-8 px-2 text-xs"
+                  aria-label="Switch to Spanish"
+                  aria-pressed={language === "es"}
                 >
                   ES
                 </Button>
@@ -125,13 +155,14 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 href="https://instagram.com/gabriella_tattoo"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
               >
                 <Button
                   variant="ghost"
                   size="sm"
                   className="text-medium-gray hover:text-soft-black"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-4 h-4" aria-hidden="true" />
                 </Button>
               </a>
             </div>
@@ -140,11 +171,16 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       </nav>
 
       {/* Hero Section - Reduced Height */}
-      <section id="home" className="relative h-screen flex items-center">
+      <section
+        id="home"
+        className="relative h-[80vh] flex items-center"
+        role="banner"
+        aria-labelledby="hero-title"
+      >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <ImageWithFallback
-            src={tattoo3}
+            src={heroImage}
             alt="Fine line tattoo background"
             className="w-full h-full object-cover"
           />
@@ -164,7 +200,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     <MapPin className="w-3 h-3 mr-1" />
                     Philadelphia, PA
                   </Badge>
-                  <h1 className="hero-title text-6xl lg:text-8xl">
+                  <h1
+                    id="hero-title"
+                    className="hero-title text-6xl lg:text-8xl"
+                  >
                     {t.hero.title}
                   </h1>
                   <h2 className="text-xl lg:text-2xl body-text">
@@ -185,16 +224,21 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                         "_blank"
                       )
                     }
+                    aria-label="Send a direct message to book a tattoo on Instagram"
                   >
-                    <Instagram className="w-5 h-5 mr-2" />
+                    <Instagram className="w-5 h-5 mr-2" aria-hidden="true" />
                     Send a DM to Book
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                      aria-hidden="true"
+                    />
                   </Button>
                   <Button
                     variant="outline"
                     size="lg"
                     onClick={() => scrollToSection("portfolio")}
                     className="px-8 py-6 text-base border-gray-300 hover:bg-white/50 bg-white/20 backdrop-blur-sm"
+                    aria-label="View portfolio section"
                   >
                     {t.hero.cta}
                   </Button>
@@ -212,10 +256,18 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       </section>
 
       {/* Portfolio Section - Uniform Grid */}
-      <section id="portfolio" className="py-20 px-6 gradient-luxury">
+      <section
+        id="main-content"
+        className="py-20 px-6 gradient-luxury"
+        role="main"
+        aria-labelledby="portfolio-title"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl mb-6 text-soft-black">
+            <h2
+              id="portfolio-title"
+              className="text-4xl lg:text-5xl mb-6 text-soft-black"
+            >
               Explore Our Artistry
             </h2>
             <p className="text-lg body-text max-w-2xl mx-auto">
@@ -226,11 +278,16 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
           </div>
 
           {/* Uniform Grid - All images same size */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            role="list"
+            aria-label="Portfolio gallery"
+          >
             {portfolioImages.map((image) => (
               <div
                 key={image.id}
                 className="gallery-item group relative rounded-2xl overflow-hidden shadow-lg"
+                role="listitem"
               >
                 <div className="aspect-[4/5] w-full">
                   <ImageWithFallback
@@ -256,16 +313,22 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             <Button
               onClick={() => setCurrentPage("gallery")}
               className="px-8 py-4 gradient-button hover:gradient-button text-white"
+              aria-label="View full gallery of tattoo work"
             >
               View Full Gallery
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* About Section - Responsive Layout */}
-      <section id="about" className="py-20 px-6 bg-white">
+      <section
+        id="about"
+        className="py-20 px-6 bg-white"
+        role="region"
+        aria-labelledby="about-title"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Artist Photo - Left on desktop/tablet, top on mobile */}
@@ -293,7 +356,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             {/* Content - Right on desktop/tablet, bottom on mobile */}
             <div className="space-y-8 order-2 lg:order-2">
               <div className="space-y-6">
-                <h2 className="text-4xl lg:text-5xl text-soft-black">
+                <h2
+                  id="about-title"
+                  className="text-4xl lg:text-5xl text-soft-black"
+                >
                   {t.about.title}
                 </h2>
                 <p className="text-lg body-text leading-relaxed">
@@ -333,31 +399,57 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       </section>
 
       {/* Services Section - Compact */}
-      <section className="py-16 px-6 gradient-elegant">
+      <section
+        className="py-16 px-6 gradient-elegant"
+        role="region"
+        aria-labelledby="services-title"
+      >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl text-center mb-12 text-soft-black">
+          <h2
+            id="services-title"
+            className="text-3xl lg:text-4xl text-center mb-12 text-soft-black"
+          >
             {t.services.title}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-8 luxury-card rounded-2xl">
-              <div className="text-4xl mb-4">✏️</div>
+          <div
+            className="grid md:grid-cols-3 gap-6"
+            role="list"
+            aria-label="Services offered"
+          >
+            <div
+              className="text-center p-8 luxury-card rounded-2xl"
+              role="listitem"
+            >
+              <div className="text-4xl mb-4" aria-hidden="true">
+                ✏️
+              </div>
               <h3 className="text-lg mb-3 text-soft-black">
                 {t.services.fineLine}
               </h3>
               <p className="text-sm body-text">{t.services.fineLineDesc}</p>
             </div>
 
-            <div className="text-center p-8 luxury-card rounded-2xl">
-              <div className="text-4xl mb-4">🌸</div>
+            <div
+              className="text-center p-8 luxury-card rounded-2xl"
+              role="listitem"
+            >
+              <div className="text-4xl mb-4" aria-hidden="true">
+                🌸
+              </div>
               <h3 className="text-lg mb-3 text-soft-black">
                 {t.services.minimalist}
               </h3>
               <p className="text-sm body-text">{t.services.minimalistDesc}</p>
             </div>
 
-            <div className="text-center p-8 luxury-card rounded-2xl">
-              <div className="text-4xl mb-4">💝</div>
+            <div
+              className="text-center p-8 luxury-card rounded-2xl"
+              role="listitem"
+            >
+              <div className="text-4xl mb-4" aria-hidden="true">
+                💝
+              </div>
               <h3 className="text-lg mb-3 text-soft-black">
                 {t.services.custom}
               </h3>
@@ -368,18 +460,25 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       </section>
 
       {/* Studio Info Section */}
-      <section className="py-20 px-6 bg-white">
+      <section
+        className="py-20 px-6 bg-white"
+        role="region"
+        aria-labelledby="studio-title"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl mb-8 text-soft-black">
+              <h2
+                id="studio-title"
+                className="text-3xl lg:text-4xl mb-8 text-soft-black"
+              >
                 {t.studio.title}
               </h2>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 gradient-button rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
+                    <MapPin className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-soft-black">{t.studio.location}</h3>
@@ -389,7 +488,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
 
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 gradient-button rounded-full flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-white" />
+                    <Clock className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-soft-black">{t.studio.hours}</h3>
@@ -414,8 +513,9 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                       "_blank"
                     )
                   }
+                  aria-label="Book a tattoo consultation via Instagram"
                 >
-                  <Instagram className="w-4 h-4 mr-2" />
+                  <Instagram className="w-4 h-4 mr-2" aria-hidden="true" />
                   {t.booking.cta}
                 </Button>
                 <p className="text-xs text-medium-gray text-center">
@@ -428,7 +528,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
       </section>
 
       {/* Footer - Updated with soft gray gradient and Gabriela branding */}
-      <footer className="gradient-footer text-gray-800 py-16 px-6">
+      <footer
+        className="gradient-footer text-gray-800 py-16 px-6"
+        role="contentinfo"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -453,8 +556,9 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-gray-800 hover:text-gray-600 transition-colors"
+                  aria-label="Follow us on Instagram"
                 >
-                  <Instagram className="w-4 h-4 mr-2" />
+                  <Instagram className="w-4 h-4 mr-2" aria-hidden="true" />
                   @gabriella_tattoo
                 </a>
               </div>
