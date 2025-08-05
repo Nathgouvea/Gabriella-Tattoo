@@ -127,7 +127,7 @@ export function Gallery({
     {
       id: 13,
       image: whatsapp1,
-      title: t.gallery.items.fineLine,
+      title: t.gallery.items.butterfly,
       category: "nature",
     },
     {
