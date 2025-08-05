@@ -239,10 +239,12 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   </Badge>
                   <h1
                     id="hero-title"
-                    className={`hero-title text-white ${
+                    className={`hero-title text-white leading-tight ${
                       language === "en"
-                        ? "text-5xl sm:text-6xl lg:text-8xl"
-                        : "text-4xl sm:text-5xl lg:text-7xl"
+                        ? "text-3xl sm:text-5xl md:text-6xl lg:text-8xl"
+                        : language === "es"
+                        ? "text-2xl sm:text-4xl md:text-5xl lg:text-7xl"
+                        : "text-3xl sm:text-4xl md:text-5xl lg:text-7xl"
                     }`}
                   >
                     {t.hero.title}

@@ -278,6 +278,15 @@
     .backdrop-blur-md {
       backdrop-filter: none !important;
     }
+
+    /* Mobile hero title optimizations */
+    .hero-title {
+      line-height: 1.1 !important;
+      word-spacing: -0.02em;
+      /* Ensure text doesn't break awkwardly */
+      overflow-wrap: break-word;
+      word-break: keep-all;
+    }
   }
 
   /* Screen reader only content */
@@ -480,6 +489,11 @@
   letter-spacing: 0.02em;
   line-height: 1.2;
   color: var(--soft-black);
+  /* Prevent orphaned words */
+  word-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* Hero section text overrides for white text */
