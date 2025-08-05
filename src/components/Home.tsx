@@ -6,7 +6,7 @@ import { MapPin, Clock, Instagram, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { translations } from "./translations";
 import artistPhoto from "../assets/gabriella-tattoo-artist.webp";
-import heroImage from "../assets/image-eyes-hero-section.webp";
+import heroImage from "../assets/hero-gabriella-tattoo-artist.webp";
 import tattoo1 from "../assets/Screenshot 2025-07-26 at 16.21.47.webp";
 import tattoo2 from "../assets/Screenshot 2025-07-26 at 16.22.16.webp";
 import tattoo3 from "../assets/Screenshot 2025-07-26 at 16.23.04.webp";
@@ -392,9 +392,16 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 >
                   {t.about.title}
                 </h2>
-                <p className="text-lg body-text leading-relaxed">
-                  {t.about.description}
-                </p>
+                <div className="text-lg body-text leading-relaxed space-y-4">
+                  {t.about.description.split("\n\n").map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-lg body-text leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
                 <p className="text-base body-text">
                   Based in Philadelphia, I specialize in creating delicate,
                   meaningful tattoos that celebrate individuality. Ready to book
@@ -402,55 +409,243 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                   vision!
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="luxury-card p-4 rounded-xl text-center">
-                  <div className="text-2xl mb-2">🌟</div>
-                  <span className="text-sm text-soft-black">
-                    {t.about.experience}
-                  </span>
-                </div>
-                <div className="luxury-card p-4 rounded-xl text-center">
-                  <div className="text-2xl mb-2">🎯</div>
-                  <span className="text-sm text-soft-black">
-                    {t.about.tattoos}
-                  </span>
-                </div>
-                <div className="luxury-card p-4 rounded-xl text-center">
-                  <div className="text-2xl mb-2">💎</div>
-                  <span className="text-sm text-soft-black">
-                    {t.about.specialty}
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section - Compact */}
+      {/* Services Section - Enhanced with Fine Line Background */}
       <section
-        className="py-16 px-6 gradient-elegant"
+        className="py-20 px-6 relative overflow-hidden"
         role="region"
         aria-labelledby="services-title"
+        style={{
+          background:
+            "linear-gradient(135deg, #f8f6f2 0%, #f0ede8 50%, #e8e4de 100%)",
+        }}
       >
-        <div className="max-w-4xl mx-auto">
+        {/* Abstract Diagonal Wave Background Elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Large diagonal wave from top-left to bottom-right */}
+          <svg
+            className="absolute -top-20 -left-20 w-[120%] h-[120%] opacity-8"
+            viewBox="0 0 400 400"
+            fill="none"
+          >
+            <path
+              d="M-50 50 Q100 0 250 50 T550 50"
+              stroke="#8B7355"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M-50 100 Q100 50 250 100 T550 100"
+              stroke="#8B7355"
+              strokeWidth="1.5"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M-50 150 Q100 100 250 150 T550 150"
+              stroke="#8B7355"
+              strokeWidth="1"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M-50 200 Q100 150 250 200 T550 200"
+              stroke="#8B7355"
+              strokeWidth="0.8"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M-50 250 Q100 200 250 250 T550 250"
+              stroke="#8B7355"
+              strokeWidth="0.6"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M-50 300 Q100 250 250 300 T550 300"
+              stroke="#8B7355"
+              strokeWidth="0.4"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Secondary diagonal wave from top-right to bottom-left */}
+          <svg
+            className="absolute -top-10 -right-10 w-[110%] h-[110%] opacity-6"
+            viewBox="0 0 400 400"
+            fill="none"
+          >
+            <path
+              d="M450 50 Q300 0 150 50 T-150 50"
+              stroke="#8B7355"
+              strokeWidth="1.8"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M450 100 Q300 50 150 100 T-150 100"
+              stroke="#8B7355"
+              strokeWidth="1.3"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M450 150 Q300 100 150 150 T-150 150"
+              stroke="#8B7355"
+              strokeWidth="0.9"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M450 200 Q300 150 150 200 T-150 200"
+              stroke="#8B7355"
+              strokeWidth="0.7"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M450 250 Q300 200 150 250 T-150 250"
+              stroke="#8B7355"
+              strokeWidth="0.5"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Flowing organic lines in corners */}
+          <svg
+            className="absolute top-0 left-0 w-64 h-64 opacity-10"
+            viewBox="0 0 200 200"
+            fill="none"
+          >
+            <path
+              d="M20 20 Q60 10 100 20 Q140 30 180 20"
+              stroke="#8B7355"
+              strokeWidth="1.2"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M20 60 Q80 40 140 60 Q160 80 180 60"
+              stroke="#8B7355"
+              strokeWidth="0.8"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M20 100 Q70 80 120 100 Q170 120 180 100"
+              stroke="#8B7355"
+              strokeWidth="0.6"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          <svg
+            className="absolute bottom-0 right-0 w-64 h-64 opacity-8"
+            viewBox="0 0 200 200"
+            fill="none"
+          >
+            <path
+              d="M180 180 Q140 190 100 180 Q60 170 20 180"
+              stroke="#8B7355"
+              strokeWidth="1.2"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M180 140 Q120 160 60 140 Q40 120 20 140"
+              stroke="#8B7355"
+              strokeWidth="0.8"
+              fill="none"
+              strokeLinecap="round"
+            />
+            <path
+              d="M180 100 Q130 120 80 100 Q30 80 20 100"
+              stroke="#8B7355"
+              strokeWidth="0.6"
+              fill="none"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Floating abstract elements */}
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 opacity-5">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path
+                d="M20 20 Q40 10 60 20 Q80 30 80 50 Q80 70 60 80 Q40 90 20 80 Q10 60 20 20"
+                stroke="#8B7355"
+                strokeWidth="0.8"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 opacity-6">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path
+                d="M30 30 Q50 20 70 30 Q80 50 70 70 Q50 80 30 70 Q20 50 30 30"
+                stroke="#8B7355"
+                strokeWidth="0.6"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
           <h2
             id="services-title"
-            className="text-3xl lg:text-4xl text-center mb-12 text-soft-black"
+            className="text-3xl lg:text-4xl text-center mb-16 text-soft-black"
           >
             {t.services.title}
           </h2>
 
           <div
-            className="grid md:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             role="list"
             aria-label="Services offered"
           >
             <div
-              className="text-center p-8 luxury-card rounded-2xl"
+              className="text-center p-8 luxury-card rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
               role="listitem"
             >
+              {/* Abstract flowing line decoration on cards */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-60"></div>
+              <div className="absolute bottom-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-12 transition-opacity duration-300">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path
+                    d="M10 20 Q30 10 50 20 Q70 30 90 20"
+                    stroke="#8B7355"
+                    strokeWidth="0.8"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M10 50 Q40 30 70 50 Q80 70 90 50"
+                    stroke="#8B7355"
+                    strokeWidth="0.6"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M10 80 Q30 70 50 80 Q70 90 90 80"
+                    stroke="#8B7355"
+                    strokeWidth="0.4"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
               <div className="text-4xl mb-4" aria-hidden="true">
                 ✏️
               </div>
@@ -461,22 +656,170 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
             </div>
 
             <div
-              className="text-center p-8 luxury-card rounded-2xl"
+              className="text-center p-8 luxury-card rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
               role="listitem"
             >
+              {/* Subtle fine line decoration on cards */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-60"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path
+                    d="M20 20 Q40 10 60 20 T100 20"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 40 Q40 30 60 40 T100 40"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 60 Q40 50 60 60 T100 60"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 80 Q40 70 60 80 T100 80"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div>
               <div className="text-4xl mb-4" aria-hidden="true">
-                🌸
+                ✍️
               </div>
               <h3 className="text-lg mb-3 text-soft-black">
-                {t.services.minimalist}
+                {t.services.lettering}
               </h3>
-              <p className="text-sm body-text">{t.services.minimalistDesc}</p>
+              <p className="text-sm body-text">{t.services.letteringDesc}</p>
             </div>
 
             <div
-              className="text-center p-8 luxury-card rounded-2xl"
+              className="text-center p-8 luxury-card rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
               role="listitem"
             >
+              {/* Subtle fine line decoration on cards */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-60"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path
+                    d="M20 20 Q40 10 60 20 T100 20"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 40 Q40 30 60 40 T100 40"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 60 Q40 50 60 60 T100 60"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 80 Q40 70 60 80 T100 80"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <div className="text-4xl mb-4" aria-hidden="true">
+                🔍
+              </div>
+              <h3 className="text-lg mb-3 text-soft-black">
+                {t.services.microRealism}
+              </h3>
+              <p className="text-sm body-text">{t.services.microRealismDesc}</p>
+            </div>
+
+            <div
+              className="text-center p-8 luxury-card rounded-2xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+              role="listitem"
+            >
+              {/* Subtle fine line decoration on cards */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-60"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path
+                    d="M20 20 Q40 10 60 20 T100 20"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 40 Q40 30 60 40 T100 40"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 60 Q40 50 60 60 T100 60"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 80 Q40 70 60 80 T100 80"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <div className="text-4xl mb-4" aria-hidden="true">
+                🎨
+              </div>
+              <h3 className="text-lg mb-3 text-soft-black">
+                {t.services.detailedStyles}
+              </h3>
+              <p className="text-sm body-text">
+                {t.services.detailedStylesDesc}
+              </p>
+            </div>
+
+            <div
+              className="text-center p-8 luxury-card rounded-2xl md:col-span-2 lg:col-span-1 relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+              role="listitem"
+            >
+              {/* Subtle fine line decoration on cards */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-60"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path
+                    d="M20 20 Q40 10 60 20 T100 20"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 40 Q40 30 60 40 T100 40"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 60 Q40 50 60 60 T100 60"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                  <path
+                    d="M20 80 Q40 70 60 80 T100 80"
+                    stroke="#8B7355"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div>
               <div className="text-4xl mb-4" aria-hidden="true">
                 💝
               </div>

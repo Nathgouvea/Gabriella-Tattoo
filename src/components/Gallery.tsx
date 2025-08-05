@@ -15,6 +15,15 @@ import tattoo9 from "../assets/Screenshot 2025-07-26 at 16.26.53.webp";
 import tattoo10 from "../assets/Screenshot 2025-07-26 at 16.27.09.webp";
 import tattoo12 from "../assets/Screenshot 2025-07-26 at 16.27.35.webp";
 import tattoo13 from "../assets/Screenshot 2025-07-26 at 16.27.46.webp";
+import whatsapp1 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (1).webp";
+import whatsapp2 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (2).webp";
+import whatsapp3 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (3).webp";
+import whatsapp4 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (4).webp";
+import whatsapp5 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (5).webp";
+import whatsapp6 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (6).webp";
+import whatsapp7 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (7).webp";
+import whatsapp8 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (8).webp";
+import whatsapp9 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49.webp";
 
 type Language = "en" | "pt" | "es";
 
@@ -114,6 +123,60 @@ export function Gallery({
       image: tattoo13,
       title: t.gallery.items.linework,
       category: "floral",
+    },
+    {
+      id: 13,
+      image: whatsapp1,
+      title: t.gallery.items.fineLine,
+      category: "nature",
+    },
+    {
+      id: 14,
+      image: whatsapp2,
+      title: t.gallery.items.floral,
+      category: "floral",
+    },
+    {
+      id: 15,
+      image: whatsapp3,
+      title: t.gallery.items.geometric,
+      category: "geometric",
+    },
+    {
+      id: 16,
+      image: whatsapp4,
+      title: t.gallery.items.rose,
+      category: "floral",
+    },
+    {
+      id: 17,
+      image: whatsapp5,
+      title: t.gallery.items.abstract,
+      category: "geometric",
+    },
+    {
+      id: 18,
+      image: whatsapp6,
+      title: t.gallery.items.nature,
+      category: "nature",
+    },
+    {
+      id: 19,
+      image: whatsapp7,
+      title: t.gallery.items.portrait,
+      category: "portrait",
+    },
+    {
+      id: 20,
+      image: whatsapp8,
+      title: t.gallery.items.sleeve,
+      category: "geometric",
+    },
+    {
+      id: 21,
+      image: whatsapp9,
+      title: t.gallery.items.artwork,
+      category: "geometric",
     },
   ];
 

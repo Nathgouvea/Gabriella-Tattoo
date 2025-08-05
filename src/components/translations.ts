@@ -10,7 +10,7 @@ export const translations = {
       title: "Fine Line Tattoo Art",
       subtitle: "Delicate & Elegant Tattoos",
       description:
-        "Creating beautiful, minimalist fine-line tattoos that tell your unique story with grace and precision.",
+        "Hey, welcome. I'm really glad you're here. I'm a tattoo artist with over five years of experience turning stories into art on skin. I work with fine line, lettering, micro realism, and other detailed, expressive styles.",
       cta: "View Portfolio",
       dmButton: "Send a DM to Book",
       dmNote: "✨ Have questions? Ready to book? Send us a DM on Instagram!",
@@ -68,7 +68,7 @@ export const translations = {
     about: {
       title: "About the Artist",
       description:
-        "With over 5 years of specialized experience in fine-line tattoo artistry, I have created more than a thousand unique pieces. My passion lies in crafting delicate, minimalist designs that capture the essence of femininity and elegance.",
+        "Hey, welcome. I'm really glad you're here.\n\nI'm a tattoo artist with over five years of experience turning stories into art on skin. I work with fine line, lettering, micro realism, and other detailed, expressive styles.\n\nFor me, every tattoo is more than a design. It's a shared moment, a conversation, a chance to turn something meaningful into something lasting. I take my time with each piece to make sure it reflects your story, your vibe, and what matters to you.\n\nI speak English, Portuguese, and Spanish, and I care deeply about creating a space where you feel comfortable, heard, and at ease.\n\nIf you're dreaming of something subtle, symbolic, or simply yours, I'd love to create it with you.\n\nLet's bring your idea to life together.",
       experience: "5+ Years Experience",
       tattoos: "1000+ Tattoos Created",
       specialty: "Fine-Line Specialist",
@@ -77,8 +77,12 @@ export const translations = {
       title: "Services",
       fineLine: "Fine Line Tattoos",
       fineLineDesc: "Delicate and precise line work",
-      minimalist: "Minimalist Designs",
-      minimalistDesc: "Clean, elegant compositions",
+      lettering: "Lettering & Script",
+      letteringDesc: "Elegant typography and calligraphy",
+      microRealism: "Micro Realism",
+      microRealismDesc: "Detailed, lifelike miniature art",
+      detailedStyles: "Detailed & Expressive",
+      detailedStylesDesc: "Complex designs with artistic expression",
       custom: "Custom Art",
       customDesc: "Personalized designs for you",
     },
@@ -121,7 +125,7 @@ export const translations = {
       title: "Arte em Tatuagem Fine Line",
       subtitle: "Tatuagens Delicadas & Elegantes",
       description:
-        "Criando lindas tatuagens minimalistas de traço fino que contam sua história única com graça e precisão.",
+        "Oi, bem-vinda. Fico muito feliz que você esteja aqui. Sou uma tatuadora com mais de cinco anos de experiência transformando histórias em arte na pele. Trabalho com linha fina, lettering, micro realismo e outros estilos detalhados e expressivos.",
       cta: "Ver Portfólio",
       dmButton: "Enviar DM para Agendar",
       dmNote:
@@ -180,7 +184,7 @@ export const translations = {
     about: {
       title: "Sobre a Artista",
       description:
-        "Com mais de 5 anos de experiência especializada em tatuagem fine line, criei mais de mil peças únicas. Minha paixão está em criar designs delicados e minimalistas que capturam a essência da feminilidade e elegância.",
+        "Oi, bem-vinda. Fico muito feliz que você esteja aqui.\n\nSou uma tatuadora com mais de cinco anos de experiência transformando histórias em arte na pele. Trabalho com linha fina, lettering, micro realismo e outros estilos detalhados e expressivos.\n\nPara mim, cada tatuagem é mais que um desenho. É um momento compartilhado, uma conversa, uma chance de transformar algo significativo em algo duradouro. Dedico tempo a cada peça para garantir que reflita sua história, sua vibe e o que importa para você.\n\nFalo inglês, português e espanhol, e me importo profundamente em criar um espaço onde você se sinta confortável, ouvida e à vontade.\n\nSe você está sonhando com algo sutil, simbólico ou simplesmente seu, adoraria criar com você.\n\nVamos dar vida à sua ideia juntas.",
       experience: "5+ Anos de Experiência",
       tattoos: "1000+ Tatuagens Criadas",
       specialty: "Especialista em Linha Fina",
@@ -189,8 +193,12 @@ export const translations = {
       title: "Serviços",
       fineLine: "Tatuagens de Linha Fina",
       fineLineDesc: "Trabalho delicado e preciso de linhas",
-      minimalist: "Desenhos Minimalistas",
-      minimalistDesc: "Composições limpas e elegantes",
+      lettering: "Lettering & Script",
+      letteringDesc: "Tipografia e caligrafia elegantes",
+      microRealism: "Micro Realismo",
+      microRealismDesc: "Arte miniatura detalhada e realista",
+      detailedStyles: "Detalhado & Expressivo",
+      detailedStylesDesc: "Designs complexos com expressão artística",
       custom: "Arte Personalizada",
       customDesc: "Desenhos personalizados para você",
     },
@@ -235,7 +243,7 @@ export const translations = {
       title: "Arte en Tatuajes Fine Line",
       subtitle: "Tatuajes Delicados y Elegantes",
       description:
-        "Creando hermosos tatuajes minimalistas de línea fina que cuentan tu historia única con gracia y precisión.",
+        "Hola, bienvenida. Me alegra mucho que estés aquí. Soy una tatuadora con más de cinco años de experiencia transformando historias en arte en la piel. Trabajo con línea fina, lettering, micro realismo y otros estilos detallados y expresivos.",
       cta: "Ver Portafolio",
       dmButton: "Enviar DM para Reservar",
       dmNote:
@@ -294,7 +302,7 @@ export const translations = {
     about: {
       title: "Sobre la Artista",
       description:
-        "Con más de 5 años de experiencia especializada en tatuajes fine line, he creado más de mil piezas únicas. Mi pasión radica en crear diseños delicados y minimalistas que capturan la esencia de la feminidad y elegancia.",
+        "Hola, bienvenida. Me alegra mucho que estés aquí.\n\nSoy una tatuadora con más de cinco años de experiencia transformando historias en arte en la piel. Trabajo con línea fina, lettering, micro realismo y otros estilos detallados y expresivos.\n\nPara mí, cada tatuaje es más que un diseño. Es un momento compartido, una conversación, una oportunidad de transformar algo significativo en algo duradero. Me tomo mi tiempo con cada pieza para asegurarme de que refleje tu historia, tu vibra y lo que te importa.\n\nHablo inglés, portugués y español, y me importa profundamente crear un espacio donde te sientas cómoda, escuchada y a gusto.\n\nSi estás soñando con algo sutil, simbólico o simplemente tuyo, me encantaría crearlo contigo.\n\nDemos vida a tu idea juntas.",
       experience: "5+ Años de Experiencia",
       tattoos: "1000+ Tatuajes Creados",
       specialty: "Especialista en Fine Line",
@@ -303,8 +311,12 @@ export const translations = {
       title: "Servicios",
       fineLine: "Tatuajes Fine Line",
       fineLineDesc: "Trabajo delicado y preciso de líneas",
-      minimalist: "Diseños Minimalistas",
-      minimalistDesc: "Composiciones limpias y elegantes",
+      lettering: "Lettering & Script",
+      letteringDesc: "Tipografía y caligrafía elegantes",
+      microRealism: "Micro Realismo",
+      microRealismDesc: "Arte miniatura detallada y realista",
+      detailedStyles: "Detallado & Expresivo",
+      detailedStylesDesc: "Diseños complejos con expresión artística",
       custom: "Arte Personalizado",
       customDesc: "Diseños personalizados para ti",
     },
