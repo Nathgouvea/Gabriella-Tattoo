@@ -241,13 +241,17 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     id="hero-title"
                     className={`hero-title text-white leading-tight ${
                       language === "en"
-                        ? "text-3xl sm:text-5xl md:text-6xl lg:text-8xl"
+                        ? "text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
                         : language === "es"
-                        ? "text-2xl sm:text-4xl md:text-5xl lg:text-7xl"
-                        : "text-3xl sm:text-4xl md:text-5xl lg:text-7xl"
+                        ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+                        : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                     }`}
                   >
-                    {t.hero.title}
+                    {t.hero.title.split("\n").map((line, index) => (
+                      <div key={index} className="block">
+                        {line}
+                      </div>
+                    ))}
                   </h1>
                   <p className="text-lg body-text leading-relaxed max-w-xl text-white">
                     {t.hero.description}

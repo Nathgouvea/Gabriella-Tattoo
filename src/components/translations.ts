@@ -7,13 +7,14 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Where Stories Become Ink",
+      title: "Where Stories\nBecome Ink",
       subtitle: "Delicate & Elegant Tattoos",
       description:
         "Specializing in fine line, lettering, micro realism, and expressive tattoos crafted with precision and care in Philadelphia, PA.",
       cta: "View Portfolio",
       dmButton: "Send a DM to Book",
-      dmNote: "✨ Have questions? Ready to book? Send me a DM on Instagram or WhatsApp!",
+      dmNote:
+        "✨ Have questions? Ready to book? Send me a DM on Instagram or WhatsApp!",
     },
     portfolio: {
       title: "Explore Our Artistry",
@@ -124,7 +125,7 @@ export const translations = {
       contact: "Contato",
     },
     hero: {
-      title: "Onde Histórias Viram Tinta",
+      title: "Onde Histórias\nViram Tinta",
       subtitle: "Tatuagens Delicadas & Elegantes",
       description:
         "Especializada em fine line, lettering, micro realismo e tatuagens expressivas, criadas com precisão e cuidado em Filadélfia, PA.",
@@ -244,7 +245,7 @@ export const translations = {
       contact: "Contacto",
     },
     hero: {
-      title: "Donde las Historias se Vuelven Tinta",
+      title: "Donde las Historias\nse Vuelven Tinta",
       subtitle: "Tatuajes Delicados y Elegantes",
       description:
         "Especializada en fine line, lettering, micro realismo y tatuajes expresivos, hechos con precisión y cuidado en Filadelfia, PA.",
