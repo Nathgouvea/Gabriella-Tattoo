@@ -13,6 +13,15 @@ import tattoo3 from "../assets/Screenshot 2025-07-26 at 16.23.04.webp";
 import tattoo4 from "../assets/Screenshot 2025-07-26 at 16.23.23.webp";
 import tattoo5 from "../assets/Screenshot 2025-07-26 at 16.24.02.webp";
 import tattoo6 from "../assets/Screenshot 2025-07-26 at 16.24.43.webp";
+import whatsapp1 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (1).webp";
+import whatsapp2 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (2).webp";
+import whatsapp3 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (3).webp";
+import whatsapp4 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (4).webp";
+import whatsapp5 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (5).webp";
+import whatsapp6 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (6).webp";
+import whatsapp7 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (7).webp";
+import whatsapp8 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49 (8).webp";
+import whatsapp9 from "../assets/WhatsApp Image 2025-07-30 at 23.02.49.webp";
 
 type Language = "en" | "pt" | "es";
 
@@ -66,43 +75,43 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Portfolio images with actual tattoo work
+  // Portfolio images with actual tattoo work - Newest first (WhatsApp images)
   const portfolioImages = [
     {
       id: 1,
-      src: tattoo1,
+      src: whatsapp9,
+      alt: t.portfolio.images.abstract,
+      title: "Latest Fine Line Artwork",
+    },
+    {
+      id: 2,
+      src: whatsapp1,
       alt: t.portfolio.images.butterfly,
       title: "Fine Line Butterfly",
     },
     {
-      id: 2,
-      src: tattoo2,
+      id: 3,
+      src: whatsapp2,
       alt: t.portfolio.images.floral,
       title: "Minimalist Floral",
     },
     {
-      id: 3,
-      src: tattoo3,
+      id: 4,
+      src: whatsapp3,
       alt: t.portfolio.images.geometric,
       title: "Geometric Pattern",
     },
     {
-      id: 4,
-      src: tattoo4,
+      id: 5,
+      src: whatsapp4,
       alt: t.portfolio.images.rose,
       title: "Delicate Rose",
     },
     {
-      id: 5,
-      src: tattoo5,
+      id: 6,
+      src: whatsapp5,
       alt: t.portfolio.images.abstract,
       title: "Abstract Design",
-    },
-    {
-      id: 6,
-      src: tattoo6,
-      alt: t.portfolio.images.nature,
-      title: "Nature Elements",
     },
   ];
 
@@ -414,194 +423,16 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
         </div>
       </section>
 
-      {/* Services Section - Enhanced with Fine Line Background */}
+      {/* Services Section */}
       <section
-        className="py-20 px-6 relative overflow-hidden"
-        role="region"
-        aria-labelledby="services-title"
+        className="py-20 px-6"
         style={{
           background:
-            "linear-gradient(135deg, #f8f6f2 0%, #f0ede8 50%, #e8e4de 100%)",
+            "linear-gradient(135deg, #f0ede8 0%, #e8e4de 30%, #e0dcd6 70%, #d8d4ce 100%)",
         }}
+        role="region"
+        aria-labelledby="services-title"
       >
-        {/* Abstract Diagonal Wave Background Elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Large diagonal wave from top-left to bottom-right */}
-          <svg
-            className="absolute -top-20 -left-20 w-[120%] h-[120%] opacity-8"
-            viewBox="0 0 400 400"
-            fill="none"
-          >
-            <path
-              d="M-50 50 Q100 0 250 50 T550 50"
-              stroke="#8B7355"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M-50 100 Q100 50 250 100 T550 100"
-              stroke="#8B7355"
-              strokeWidth="1.5"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M-50 150 Q100 100 250 150 T550 150"
-              stroke="#8B7355"
-              strokeWidth="1"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M-50 200 Q100 150 250 200 T550 200"
-              stroke="#8B7355"
-              strokeWidth="0.8"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M-50 250 Q100 200 250 250 T550 250"
-              stroke="#8B7355"
-              strokeWidth="0.6"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M-50 300 Q100 250 250 300 T550 300"
-              stroke="#8B7355"
-              strokeWidth="0.4"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          {/* Secondary diagonal wave from top-right to bottom-left */}
-          <svg
-            className="absolute -top-10 -right-10 w-[110%] h-[110%] opacity-6"
-            viewBox="0 0 400 400"
-            fill="none"
-          >
-            <path
-              d="M450 50 Q300 0 150 50 T-150 50"
-              stroke="#8B7355"
-              strokeWidth="1.8"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M450 100 Q300 50 150 100 T-150 100"
-              stroke="#8B7355"
-              strokeWidth="1.3"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M450 150 Q300 100 150 150 T-150 150"
-              stroke="#8B7355"
-              strokeWidth="0.9"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M450 200 Q300 150 150 200 T-150 200"
-              stroke="#8B7355"
-              strokeWidth="0.7"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M450 250 Q300 200 150 250 T-150 250"
-              stroke="#8B7355"
-              strokeWidth="0.5"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          {/* Flowing organic lines in corners */}
-          <svg
-            className="absolute top-0 left-0 w-64 h-64 opacity-10"
-            viewBox="0 0 200 200"
-            fill="none"
-          >
-            <path
-              d="M20 20 Q60 10 100 20 Q140 30 180 20"
-              stroke="#8B7355"
-              strokeWidth="1.2"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M20 60 Q80 40 140 60 Q160 80 180 60"
-              stroke="#8B7355"
-              strokeWidth="0.8"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M20 100 Q70 80 120 100 Q170 120 180 100"
-              stroke="#8B7355"
-              strokeWidth="0.6"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          <svg
-            className="absolute bottom-0 right-0 w-64 h-64 opacity-8"
-            viewBox="0 0 200 200"
-            fill="none"
-          >
-            <path
-              d="M180 180 Q140 190 100 180 Q60 170 20 180"
-              stroke="#8B7355"
-              strokeWidth="1.2"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M180 140 Q120 160 60 140 Q40 120 20 140"
-              stroke="#8B7355"
-              strokeWidth="0.8"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M180 100 Q130 120 80 100 Q30 80 20 100"
-              stroke="#8B7355"
-              strokeWidth="0.6"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          {/* Floating abstract elements */}
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 opacity-5">
-            <svg viewBox="0 0 100 100" fill="none">
-              <path
-                d="M20 20 Q40 10 60 20 Q80 30 80 50 Q80 70 60 80 Q40 90 20 80 Q10 60 20 20"
-                stroke="#8B7355"
-                strokeWidth="0.8"
-                fill="none"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 opacity-6">
-            <svg viewBox="0 0 100 100" fill="none">
-              <path
-                d="M30 30 Q50 20 70 30 Q80 50 70 70 Q50 80 30 70 Q20 50 30 30"
-                stroke="#8B7355"
-                strokeWidth="0.6"
-                fill="none"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-        </div>
-
         <div className="max-w-4xl mx-auto relative z-10">
           <h2
             id="services-title"

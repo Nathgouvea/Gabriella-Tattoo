@@ -7,13 +7,13 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Fine Line Tattoo Art",
+      title: "Where Stories Become Ink",
       subtitle: "Delicate & Elegant Tattoos",
       description:
-        "Hey, welcome. I'm really glad you're here. I'm a tattoo artist with over five years of experience turning stories into art on skin. I work with fine line, lettering, micro realism, and other detailed, expressive styles.",
+        "Specializing in fine line, lettering, micro realism, and expressive tattoos crafted with precision and care in Philadelphia, PA.",
       cta: "View Portfolio",
       dmButton: "Send a DM to Book",
-      dmNote: "✨ Have questions? Ready to book? Send us a DM on Instagram!",
+      dmNote: "✨ Have questions? Ready to book? Send me a DM on Instagram!",
     },
     portfolio: {
       title: "Explore Our Artistry",
@@ -122,14 +122,14 @@ export const translations = {
       contact: "Contato",
     },
     hero: {
-      title: "Arte em Tatuagem Fine Line",
+      title: "Onde Histórias Viram Tinta",
       subtitle: "Tatuagens Delicadas & Elegantes",
       description:
-        "Oi, bem-vinda. Fico muito feliz que você esteja aqui. Sou uma tatuadora com mais de cinco anos de experiência transformando histórias em arte na pele. Trabalho com linha fina, lettering, micro realismo e outros estilos detalhados e expressivos.",
+        "Especializada em fine line, lettering, micro realismo e tatuagens expressivas, criadas com precisão e cuidado em Filadélfia, PA.",
       cta: "Ver Portfólio",
       dmButton: "Enviar DM para Agendar",
       dmNote:
-        "✨ Tem perguntas? Pronta para agendar? Envie-nos uma DM no Instagram!",
+        "✨ Tem perguntas? Pronto para agendar? Envie-me uma DM no Instagram!",
     },
     portfolio: {
       title: "Explore Nossa Arte",
@@ -240,14 +240,14 @@ export const translations = {
       contact: "Contacto",
     },
     hero: {
-      title: "Arte en Tatuajes Fine Line",
+      title: "Donde las Historias se Vuelven Tinta",
       subtitle: "Tatuajes Delicados y Elegantes",
       description:
-        "Hola, bienvenida. Me alegra mucho que estés aquí. Soy una tatuadora con más de cinco años de experiencia transformando historias en arte en la piel. Trabajo con línea fina, lettering, micro realismo y otros estilos detallados y expresivos.",
+        "Especializada en fine line, lettering, micro realismo y tatuajes expresivos, hechos con precisión y cuidado en Filadelfia, PA.",
       cta: "Ver Portafolio",
       dmButton: "Enviar DM para Reservar",
       dmNote:
-        "✨ ¿Tienes preguntas? ¿Lista para reservar? ¡Envíanos un DM en Instagram!",
+        "✨ ¿Tienes preguntas? ¿Listo para agendar? ¡Envíame un DM por Instagram!",
     },
     portfolio: {
       title: "Explora Nuestro Arte",
