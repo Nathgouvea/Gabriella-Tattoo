@@ -207,10 +207,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
         </div>
       </nav>
 
-      {/* Hero Section - Reduced Height */}
+      {/* Hero Section - Increased Height */}
       <section
         id="home"
-        className="relative h-[80vh] flex items-center"
+        className="relative h-[90vh] md:h-[95vh] flex items-center"
         role="banner"
         aria-labelledby="hero-title"
       >
