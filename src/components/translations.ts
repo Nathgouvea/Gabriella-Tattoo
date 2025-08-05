@@ -13,7 +13,7 @@ export const translations = {
         "Specializing in fine line, lettering, micro realism, and expressive tattoos crafted with precision and care in Philadelphia, PA.",
       cta: "View Portfolio",
       dmButton: "Send a DM to Book",
-      dmNote: "✨ Have questions? Ready to book? Send me a DM on Instagram!",
+      dmNote: "✨ Have questions? Ready to book? Send me a DM on Instagram or WhatsApp!",
     },
     portfolio: {
       title: "Explore Our Artistry",
@@ -32,7 +32,7 @@ export const translations = {
     cta: {
       title: "Ready for Your Fine Line Tattoo?",
       description:
-        "Let's create something beautiful together. Send me a message on Instagram to discuss your design ideas and book your personalized consultation.",
+        "Let's create something beautiful together. Send me a message on Instagram or WhatsApp to discuss your design ideas and book your personalized consultation.",
       button: "Message @gabriella_tattoo",
     },
     gallery: {
@@ -96,9 +96,10 @@ export const translations = {
     booking: {
       title: "Book Your Session",
       description:
-        "Ready to get your dream tattoo? All bookings are handled through Instagram Direct Messages for personalized consultation.",
+        "Ready to get your dream tattoo? All bookings are handled through Instagram Direct Messages or WhatsApp for personalized consultation.",
       cta: "Message on Instagram",
       note: "Response within 48 hours",
+      whatsapp: "+1 (215) 433-5441",
     },
     footer: {
       rights: "© 2025 Fine Line Tattoo Art. All rights reserved.",
@@ -108,7 +109,8 @@ export const translations = {
       experience: "Fine line tattoo artistry with 5+ years of experience",
       bookTitle: "Book Your Tattoo",
       bookDescription:
-        "🎨 To book a tattoo, DM us on Instagram for personalized consultation",
+        "🎨 To book a tattoo, DM us on Instagram or WhatsApp for personalized consultation",
+      whatsapp: "+1 (215) 433-5441",
       credits: "Credits",
       madeWithLove: "Made with love by",
       crafting: "Crafting beautiful web experiences",
@@ -129,7 +131,7 @@ export const translations = {
       cta: "Ver Portfólio",
       dmButton: "Enviar DM para Agendar",
       dmNote:
-        "✨ Tem perguntas? Pronto para agendar? Envie-me uma DM no Instagram!",
+        "✨ Tem perguntas? Pronto para agendar? Envie-me uma DM no Instagram ou WhatsApp!",
     },
     portfolio: {
       title: "Explore Nossa Arte",
@@ -148,7 +150,7 @@ export const translations = {
     cta: {
       title: "Pronta para Sua Tatuagem Fine Line?",
       description:
-        "Vamos criar algo lindo juntas. Envie-me uma mensagem no Instagram para discutir suas ideias de design e agendar sua consulta personalizada.",
+        "Vamos criar algo lindo juntas. Envie-me uma mensagem no Instagram ou WhatsApp para discutir suas ideias de design e agendar sua consulta personalizada.",
       button: "Mensagem @gabriella_tattoo",
     },
     gallery: {
@@ -212,9 +214,10 @@ export const translations = {
     booking: {
       title: "Agende Sua Sessão",
       description:
-        "Pronta para fazer sua tatuagem dos sonhos? Todos os agendamentos são feitos através do Instagram Direto para consulta personalizada.",
+        "Pronta para fazer sua tatuagem dos sonhos? Todos os agendamentos são feitos através do Instagram Direto ou WhatsApp para consulta personalizada.",
       cta: "Mensagem no Instagram",
       note: "Resposta em até 48 horas",
+      whatsapp: "+1 (215) 433-5441",
     },
     footer: {
       rights:
@@ -226,7 +229,8 @@ export const translations = {
         "Arte em tatuagem de linha fina com mais de 5 anos de experiência",
       bookTitle: "Agende Sua Tatuagem",
       bookDescription:
-        "🎨 Para agendar uma tatuagem, envie-nos uma DM no Instagram para consulta personalizada",
+        "🎨 Para agendar uma tatuagem, envie-nos uma DM no Instagram ou WhatsApp para consulta personalizada",
+      whatsapp: "+1 (215) 433-5441",
       credits: "Créditos",
       madeWithLove: "Feito com amor por",
       crafting: "Criando experiências web incríveis",
@@ -247,7 +251,7 @@ export const translations = {
       cta: "Ver Portafolio",
       dmButton: "Enviar DM para Reservar",
       dmNote:
-        "✨ ¿Tienes preguntas? ¿Listo para agendar? ¡Envíame un DM por Instagram!",
+        "✨ ¿Tienes preguntas? ¿Listo para agendar? ¡Envíame un DM por Instagram o WhatsApp!",
     },
     portfolio: {
       title: "Explora Nuestro Arte",
@@ -266,7 +270,7 @@ export const translations = {
     cta: {
       title: "¿Lista para tu Tatuaje Fine Line?",
       description:
-        "Creemos algo hermoso juntas. Envíame un mensaje en Instagram para discutir tus ideas de diseño y reservar tu consulta personalizada.",
+        "Creemos algo hermoso juntas. Envíame un mensaje en Instagram o WhatsApp para discutir tus ideas de diseño y reservar tu consulta personalizada.",
       button: "Mensaje @gabriella_tattoo",
     },
     gallery: {
@@ -330,9 +334,10 @@ export const translations = {
     booking: {
       title: "Reserva tu Sesión",
       description:
-        "¿Lista para tu tatuaje soñado? Todas las reservas se manejan a través de Instagram Direct para consulta personalizada.",
+        "¿Lista para tu tatuaje soñado? Todas las reservas se manejan a través de Instagram Direct o WhatsApp para consulta personalizada.",
       cta: "Mensaje en Instagram",
       note: "Respuesta en 48 horas",
+      whatsapp: "+1 (215) 433-5441",
     },
     footer: {
       rights:
@@ -344,7 +349,8 @@ export const translations = {
         "Arte en tatuajes de línea fina con más de 5 años de experiencia",
       bookTitle: "Reserva tu Tatuaje",
       bookDescription:
-        "🎨 Para reservar un tatuaje, envíanos un DM en Instagram para consulta personalizada",
+        "🎨 Para reservar un tatuaje, envíanos un DM en Instagram o WhatsApp para consulta personalizada",
+      whatsapp: "+1 (215) 433-5441",
       credits: "Créditos",
       madeWithLove: "Hecho con amor por",
       crafting: "Creando hermosas experiencias web",
