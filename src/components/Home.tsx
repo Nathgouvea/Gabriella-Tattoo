@@ -219,7 +219,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
           <ImageWithFallback
             src={heroImage}
             alt="Fine line tattoo background"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-left md:object-top"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -241,10 +241,10 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                     id="hero-title"
                     className={`hero-title text-white leading-tight ${
                       language === "en"
-                        ? "text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
+                        ? "text-5xl sm:text-7xl md:text-8xl lg:text-9xl"
                         : language === "es"
-                        ? "text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-                        : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                        ? "text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
+                        : "text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
                     }`}
                   >
                     {t.hero.title.split("\n").map((line, index) => (
