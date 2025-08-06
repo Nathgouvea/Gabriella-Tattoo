@@ -745,7 +745,7 @@ export function Home({ language, setLanguage, setCurrentPage }: HomeProps) {
                 </Button>
                 <div className="text-center mb-4">
                   <p className="text-sm text-medium-gray mb-2">
-                    Or contact via phone:
+                    Or send us a message:
                   </p>
                   <a
                     href={`sms:+12154335441`}

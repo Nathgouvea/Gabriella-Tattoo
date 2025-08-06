@@ -14,7 +14,7 @@ export const translations = {
       cta: "View Portfolio",
       dmButton: "Send a DM to Book",
       dmNote:
-        "✨ Have questions? Ready to book? Send me a DM on Instagram or call!",
+        "✨ Have questions? Ready to book? Send me a DM on Instagram or message!",
     },
     portfolio: {
       title: "Explore Our Artistry",
@@ -97,7 +97,7 @@ export const translations = {
     booking: {
       title: "Book Your Session",
       description:
-        "Ready to get your dream tattoo? All bookings are handled through Instagram Direct Messages or phone for personalized consultation.",
+        "Ready to get your dream tattoo? All bookings are handled through Instagram Direct Messages or text for personalized consultation.",
       cta: "Message on Instagram",
       note: "Response within 48 hours",
       phone: "+1 (215) 433-5441",
@@ -110,7 +110,7 @@ export const translations = {
       experience: "Fine line tattoo artistry with 5+ years of experience",
       bookTitle: "Book Your Tattoo",
       bookDescription:
-        "🎨 To book a tattoo, DM us on Instagram or call for personalized consultation",
+        "🎨 To book a tattoo, DM us on Instagram or message for personalized consultation",
       phone: "+1 (215) 433-5441",
       credits: "Credits",
       madeWithLove: "Made with love by",
@@ -132,7 +132,7 @@ export const translations = {
       cta: "Ver Portfólio",
       dmButton: "Enviar DM para Agendar",
       dmNote:
-        "✨ Tem perguntas? Pronto para agendar? Envie-me uma DM no Instagram ou ligue!",
+        "✨ Tem perguntas? Pronto para agendar? Envie-me uma DM no Instagram ou envie uma mensagem!",
     },
     portfolio: {
       title: "Explore Nossa Arte",
@@ -215,7 +215,7 @@ export const translations = {
     booking: {
       title: "Agende Sua Sessão",
       description:
-        "Pronta para fazer sua tatuagem dos sonhos? Todos os agendamentos são feitos através do Instagram Direto ou telefone para consulta personalizada.",
+        "Pronta para fazer sua tatuagem dos sonhos? Todos os agendamentos são feitos através do Instagram Direto ou mensagem para consulta personalizada.",
       cta: "Mensagem no Instagram",
       note: "Resposta em até 48 horas",
       phone: "+1 (215) 433-5441",
@@ -230,7 +230,7 @@ export const translations = {
         "Arte em tatuagem de linha fina com mais de 5 anos de experiência",
       bookTitle: "Agende Sua Tatuagem",
       bookDescription:
-        "🎨 Para agendar uma tatuagem, envie-nos uma DM no Instagram ou ligue para consulta personalizada",
+        "🎨 Para agendar uma tatuagem, envie-nos uma DM no Instagram ou envie uma mensagem para consulta personalizada",
       phone: "+1 (215) 433-5441",
       credits: "Créditos",
       madeWithLove: "Feito com amor por",
@@ -252,7 +252,7 @@ export const translations = {
       cta: "Ver Portafolio",
       dmButton: "Enviar DM para Reservar",
       dmNote:
-        "✨ ¿Tienes preguntas? ¿Listo para agendar? ¡Envíame un DM por Instagram o llama!",
+        "✨ ¿Tienes preguntas? ¿Listo para agendar? ¡Envíame un DM por Instagram o envía un mensaje!",
     },
     portfolio: {
       title: "Explora Nuestro Arte",
@@ -335,7 +335,7 @@ export const translations = {
     booking: {
       title: "Reserva tu Sesión",
       description:
-        "¿Lista para tu tatuaje soñado? Todas las reservas se manejan a través de Instagram Direct o teléfono para consulta personalizada.",
+        "¿Lista para tu tatuaje soñado? Todas las reservas se manejan a través de Instagram Direct o mensaje para consulta personalizada.",
       cta: "Mensaje en Instagram",
       note: "Respuesta en 48 horas",
       phone: "+1 (215) 433-5441",
@@ -350,7 +350,7 @@ export const translations = {
         "Arte en tatuajes de línea fina con más de 5 años de experiencia",
       bookTitle: "Reserva tu Tatuaje",
       bookDescription:
-        "🎨 Para reservar un tatuaje, envíanos un DM en Instagram o llama para consulta personalizada",
+        "🎨 Para reservar un tatuaje, envíanos un DM en Instagram o envía un mensaje para consulta personalizada",
       phone: "+1 (215) 433-5441",
       credits: "Créditos",
       madeWithLove: "Hecho con amor por",
